@@ -8,7 +8,6 @@
     packages = with pkgs; [
       bitwig-studio
       obsidian
-      pragtical
       yabridge
       yabridgectl
       lutris

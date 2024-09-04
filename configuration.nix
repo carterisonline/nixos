@@ -134,7 +134,7 @@
   services.flatpak.enable = true;
 
   environment.systemPackages = with pkgs; [
-    zed-editor
+    pragtical
     nix-software-center.packages.${system}.nix-software-center
     nix-index
     gum
