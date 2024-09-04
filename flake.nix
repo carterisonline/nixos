@@ -1,16 +1,17 @@
 {
-  inputs = {
+  inputs = let
+    follow = url: {
+      url = url;
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+  in {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     stylix.url = "github:danth/stylix/release-24.05";
-    nix-software-center.url = "github:snowfallorg/nix-software-center";
-    nix-software-center.inputs.nixpkgs.follows = "nixpkgs";
-    home-manager.url = "github:nix-community/home-manager/release-24.05";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    plasma-manager.url = "github:nix-community/plasma-manager";
-    plasma-manager.inputs.nixpkgs.follows = "nixpkgs";
-    flatpaks.url = "github:GermanBread/declarative-flatpak/stable-v3";
-    flatpaks.inputs.nixpkgs.follows = "nixpkgs";
+    nix-software-center = follow "github:snowfallorg/nix-software-center";
+    home-manager = follow "github:nix-community/home-manager/release-24.05";
+    plasma-manager = follow "github:nix-community/plasma-manager";
+    flatpaks = follow "github:GermanBread/declarative-flatpak/stable-v3";
   };
 
   outputs = { nixpkgs, nixpkgs-unstable, stylix, home-manager, plasma-manager, flatpaks, nix-software-center, ... }@attrs: {
