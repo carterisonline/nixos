@@ -19,6 +19,9 @@
       specialArgs = attrs;
       modules = [
         {
+          system.stateVersion = "24.05"; # DO NOT CHANGE OR REMOVE
+        }
+        {
           nixpkgs.overlays = [
             (final: prev: {
               pragtical = nixpkgs-unstable.legacyPackages.x86_64-linux.pragtical;

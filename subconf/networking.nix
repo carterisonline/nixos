@@ -1,5 +1,3 @@
-{ ... }:
-
 {
   networking = {
     hostName = "nixos";
@@ -12,15 +10,20 @@
     dhcpcd.extraConfig = "nohook resolv.conf";
     
     nameservers = [
-      # "194.242.2.4"
-      # "194.242.2.3"
-      # "194.242.2.2"
-      # "2a97:e340::4"
-      # "2a07:e340::3"
-      # "2a07:e340::2"
       "127.0.0.1"
       "::1"
     ];
+
+    nftables.enable = true;
+    firewall = { 
+      enable = true;
+      allowedTCPPortRanges = [ 
+        { from = 1714; to = 1764; } # KDE Connect
+      ];  
+      allowedUDPPortRanges = [ 
+        { from = 1714; to = 1764; } # KDE Connect
+      ];  
+    };
   };
 
   services.dnscrypt-proxy2 = {
