@@ -248,6 +248,26 @@
         "type": "github"
       }
     },
+    "musnix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1724652006,
+        "narHash": "sha256-ddnm53sXIT23JXOuWJwnqYBZ/INxS0d149JGusD4eQw=",
+        "owner": "musnix",
+        "repo": "musnix",
+        "rev": "588029a79515650be7b0005664470b0b118d35cd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "musnix",
+        "repo": "musnix",
+        "type": "github"
+      }
+    },
     "nix-software-center": {
       "inputs": {
         "nixos-appstream-data": "nixos-appstream-data",
@@ -369,6 +389,7 @@
       "inputs": {
         "flatpaks": "flatpaks",
         "home-manager": "home-manager",
+        "musnix": "musnix",
         "nix-software-center": "nix-software-center",
         "nixpkgs": "nixpkgs",
         "nixpkgs-unstable": "nixpkgs-unstable",

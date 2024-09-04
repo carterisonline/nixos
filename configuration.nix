@@ -2,12 +2,13 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, pkgs, nix-software-center, plasma-manager, flatpaks, ... }:
+{ config, pkgs, nix-software-center, plasma-manager, flatpaks, musnix, ... }:
 
 {
   imports =
     [
       ./hardware-configuration.nix
+      ./subconf/audio.nix
       ./subconf/environment.nix
       ./subconf/graphics.nix
       ./subconf/networking.nix
@@ -23,17 +24,9 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   boot.supportedFilesystems = [ "bcachefs" ];
-  boot.kernelPackages = pkgs.linuxPackages_6_10;
   boot.extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback ];
 
   time.timeZone = "America/New_York";
-
-  security.pam.loginLimits = [
-    { domain = "@audio"; item = "memlock"; type = "-"; value = "unlimited"; }
-    { domain = "@audio"; item = "rtprio"; type = "-"; value = "99"; }
-    { domain = "@audio"; item = "nofile"; type = "soft"; value = "99999"; }
-    { domain = "@audio"; item = "nofile"; type = "hard"; value = "99999"; }
-  ];
 
   users.users.carter = {
     isNormalUser = true;
@@ -48,11 +41,6 @@
   };
 
   services.desktopManager.plasma6.enable = true;
-
-  services.pipewire = {
-     enable = true;
-     pulse.enable = true;
-  };
 
   services.printing.enable = true;
   services.libinput.enable = true;

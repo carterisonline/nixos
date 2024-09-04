@@ -2,6 +2,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    #chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     stylix.url = "github:danth/stylix/release-24.05";
     nix-software-center.url = "github:snowfallorg/nix-software-center";
     nix-software-center.inputs.nixpkgs.follows = "nixpkgs";
@@ -11,9 +12,11 @@
     plasma-manager.inputs.nixpkgs.follows = "nixpkgs";
     flatpaks.url = "github:GermanBread/declarative-flatpak/stable-v3";
     flatpaks.inputs.nixpkgs.follows = "nixpkgs";
+    musnix.url = "github:musnix/musnix";
+    musnix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nixpkgs, nixpkgs-unstable, stylix, home-manager, plasma-manager, flatpaks, nix-software-center, ... }@attrs: {
+  outputs = { nixpkgs, nixpkgs-unstable, stylix, home-manager, plasma-manager, flatpaks, nix-software-center, musnix, ... }@attrs: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = attrs;
@@ -28,7 +31,9 @@
             })
           ];
         }
-        stylix.nixosModules.stylix 
+        stylix.nixosModules.stylix
+        musnix.nixosModules.musnix
+        #chaotic.nixosModules.default
         ./configuration.nix
         home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;
