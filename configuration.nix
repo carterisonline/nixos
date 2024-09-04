@@ -98,6 +98,10 @@
     { domain = "@audio"; item = "nofile"; type = "hard"; value = "99999"; }
   ];
 
+  security.sudo.extraConfig = ''
+    Defaults:root,%wheel env_keep+=WAYLAND_DISPLAY
+  '';
+
   users.users.carter = {
     isNormalUser = true;
     home = "/home/carter";
