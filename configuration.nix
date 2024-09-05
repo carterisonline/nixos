@@ -12,6 +12,7 @@
       ./subconf/environment.nix
       ./subconf/graphics.nix
       ./subconf/networking.nix
+      ./subconf/nixbuild.nix
     ];
 
   nix.settings = {

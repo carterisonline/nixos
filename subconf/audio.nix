@@ -2,6 +2,7 @@
 
 {
   #boot.kernelPackages = pkgs.linuxPackages_6_8_rt;
+  
   musnix = {
     enable = true;
     rtcqs.enable = true;
