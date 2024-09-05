@@ -13,6 +13,7 @@
       ./subconf/graphics.nix
       ./subconf/networking.nix
       #./subconf/nixbuild.nix
+      ./subconf/plymouth.nix
     ];
 
   nix.settings = {
