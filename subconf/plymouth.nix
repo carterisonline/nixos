@@ -1,7 +1,16 @@
-{ pkgs, ...}:
+{ pkgs, stylix, ...}:
 
 {
-  boot.plymouth.enable = true;
+  boot.plymouth = {
+    enable = true;
+    theme = "colorful_sliced";
+    themePackages = with pkgs; [
+      (adi1090x-plymouth-themes.override {
+        selected_themes = [ "colorful_sliced" ];
+      })
+    ];
+  };
+  
   boot.consoleLogLevel = 0;
   boot.initrd.verbose = false;
   boot.kernelParams = [
@@ -32,4 +41,6 @@
       EOF
     '')
   ];
+
+  stylix.targets.plymouth.enable = false;
 }
