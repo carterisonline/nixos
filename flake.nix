@@ -28,6 +28,7 @@
           nixpkgs.overlays = [
             (final: prev: {
               pragtical = nixpkgs-unstable.legacyPackages.x86_64-linux.pragtical;
+              zed = nixpkgs-unstable.legacyPackages.x86_64-linux.zed-editor;
             })
           ];
         }

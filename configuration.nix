@@ -61,6 +61,7 @@
   services.flatpak.enable = true;
 
   environment.systemPackages = with pkgs; [
+    zed
     pragtical
     nix-software-center.packages.${system}.nix-software-center
     nix-index
@@ -83,7 +84,11 @@
 
     # Nix language tools
     nil
+    nixd
     nixfmt-rfc-style
+
+    # Other lsps
+    nodePackages.vscode-json-languageserver
 
     # Plasma deps
     kdePackages.bluez-qt
