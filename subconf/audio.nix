@@ -1,8 +1,6 @@
 { pkgs, musnix, ... }:
 
 {
-  boot.kernelPackages = pkgs.linuxPackages_6_9_rt;
-  
   musnix = {
     enable = true;
     rtcqs.enable = true;
