@@ -12,7 +12,7 @@
       ./subconf/environment.nix
       ./subconf/graphics.nix
       ./subconf/networking.nix
-      ./subconf/nixbuild.nix
+      #./subconf/nixbuild.nix
     ];
 
   nix.settings = {
@@ -20,12 +20,10 @@
     substituters = [
       "https://nix-community.cachix.org"
       "https://cache.nixos.org/"
-      "ssh://eu.nixbuild.net"
     ];
     trusted-public-keys = [
       "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-      "nixbuild.net/MGDLPD-1:v7YiCIxcnG2W+ExXOqjepvxDltMOaCbMdmm2DrEy3Pc="
     ];
   };
 
