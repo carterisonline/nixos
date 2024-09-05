@@ -1,12 +1,11 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     #chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
-    stylix.url = "github:danth/stylix/release-24.05";
+    stylix.url = "github:danth/stylix";
     nix-software-center.url = "github:snowfallorg/nix-software-center";
     nix-software-center.inputs.nixpkgs.follows = "nixpkgs";
-    home-manager.url = "github:nix-community/home-manager/release-24.05";
+    home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     plasma-manager.url = "github:nix-community/plasma-manager";
     plasma-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -16,20 +15,13 @@
     musnix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nixpkgs, nixpkgs-unstable, stylix, home-manager, plasma-manager, flatpaks, nix-software-center, musnix, ... }@attrs: {
+  outputs = { nixpkgs, stylix, home-manager, plasma-manager, flatpaks, nix-software-center, musnix, ... }@attrs: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = attrs;
       modules = [
         {
           system.stateVersion = "24.05"; # DO NOT CHANGE OR REMOVE
-        }
-        {
-          nixpkgs.overlays = [
-            (final: prev: {
-              pragtical = nixpkgs-unstable.legacyPackages.x86_64-linux.pragtical;
-            })
-          ];
         }
         stylix.nixosModules.stylix
         musnix.nixosModules.musnix

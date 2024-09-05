@@ -34,7 +34,7 @@
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelPackages = pkgs.linuxPackages_6_10;
+  boot.kernelPackages = chaotic.linuxPackages_cachyos-lto;
 
   boot.supportedFilesystems = [ "bcachefs" ];
   boot.extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback ];
@@ -126,5 +126,7 @@
   programs.steam.enable = true;
 
   stylix = import ./stylix.nix pkgs;
+  
+  system.stateVersion = "24.05";
 }
 
