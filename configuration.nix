@@ -61,6 +61,7 @@
   services.flatpak.enable = true;
 
   environment.systemPackages = with pkgs; [
+    easyeffects
     zed
     pragtical
     nix-software-center.packages.${system}.nix-software-center
