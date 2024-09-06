@@ -27,7 +27,10 @@
     remotes = {
       "flathub" = "https://dl.flathub.org/repo/flathub.flatpakrepo";
     };
-    packages = [ "flathub:app/com.discordapp.Discord/x86_64/stable" ];
+    packages = [
+      "flathub:app/com.discordapp.Discord/x86_64/stable"
+      "flathub:app/app.ytmdesktop.ytmdesktop/x86_64/stable"
+    ];
   };
 
   programs.fish = {
