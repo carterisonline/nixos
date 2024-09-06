@@ -61,6 +61,7 @@
   services.flatpak.enable = true;
 
   environment.systemPackages = with pkgs; [
+    inotify-tools
     easyeffects
     zed
     pragtical
