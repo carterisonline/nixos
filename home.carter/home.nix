@@ -29,7 +29,6 @@
     };
     packages = [
       "flathub:app/com.discordapp.Discord/x86_64/stable"
-      "flathub:app/app.ytmdesktop.ytmdesktop/x86_64/stable"
     ];
   };
 
@@ -89,6 +88,7 @@
     plugins = with pkgs.obs-studio-plugins; [
       obs-pipewire-audio-capture
       obs-shaderfilter
+      obs-tuna
       wlrobs
     ];
   };
