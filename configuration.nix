@@ -35,7 +35,7 @@
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelPackages = pkgs.linuxPackages_lqx;
+  boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
 
   boot.supportedFilesystems = [ "bcachefs" ];
   boot.extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback ];
