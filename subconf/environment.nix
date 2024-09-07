@@ -1,6 +1,6 @@
 {
   environment.sessionVariables = rec {
-    SDL_VIDEODRIVER = "wayland";
+    #SDL_VIDEODRIVER = "wayland";
     MOZ_USE_XINPUT2 = "1";
   };
 
