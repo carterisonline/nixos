@@ -95,4 +95,5 @@
   };
 
   programs.plasma = import ./programs/plasma.nix;
+  programs.vscode = import ./programs/vscode.nix;
 }
