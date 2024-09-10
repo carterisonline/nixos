@@ -1,7 +1,10 @@
 { pkgs, ... }: {
   nixpkgs.config.allowUnfree = true;
 
-  stylix = import ../stylix.nix pkgs;
+  stylix = ( import ../stylix.nix pkgs ) // {
+    targets.vscode.enable = false;
+  };
+  
   home = {
     file."/home/carter/.gtkrc-2.0".force = true;
   
@@ -95,5 +98,5 @@
   };
 
   programs.plasma = import ./programs/plasma.nix;
-  programs.vscode = import ./programs/vscode.nix;
+  programs.vscode = import ./programs/vscode.nix pkgs;
 }
