@@ -1,12 +1,6 @@
 { pkgs, musnix, ... }:
 
 {
-  # musnix = {
-  #   enable = true;
-  #   rtcqs.enable = true;
-  #   rtirq.enable = true;
-  #   das_watchdog.enable = true;
-  # };
   services.pipewire = {
      enable = true;
      pulse.enable = true;

@@ -8,17 +8,15 @@
   home = {
     file."/home/carter/.gtkrc-2.0".force = true;
   
-    packages = with pkgs; [
+    packages = with pkgs; [ 
       bitwig-studio
+      helvum
+      lutris
       obsidian
+      scrcpy
       yabridge
       yabridgectl
-      lutris
-      scrcpy
-      helvum
-      rye
-      uv
-    ];
+   ];
 
     username = "carter";
     homeDirectory = "/home/carter";
@@ -31,6 +29,7 @@
       "flathub" = "https://dl.flathub.org/repo/flathub.flatpakrepo";
     };
     packages = [
+      "flathub:app/com.chatterino.chatterino/x86_64/stable"
       "flathub:app/com.discordapp.Discord/x86_64/stable"
     ];
   };
@@ -54,7 +53,6 @@
   programs.helix = {
     enable = true;
     settings = {
-      #theme = "onedark";
       editor.cursor-shape = {
         normal = "block";
         insert = "bar";

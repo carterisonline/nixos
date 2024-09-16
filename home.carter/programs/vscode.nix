@@ -24,11 +24,14 @@ pkgs:
   ];
 
   userSettings = {
+    "editor.fontFamily" = "'JetBrains Mono', 'monospace', monospace";
     "editor.formatOnSave" = true;
+    "editor.minimap.enabled" = false;
     "[nix]"."editor.tabSize" = 2;
+    "window.titleBarStyle" = "custom";
+    "workbench.iconTheme" = "material-icon-theme";
+    "zig.initialSetupDone" = true;
     "zig.path" = "zig";
     "zig.zls.path" = "zls";
-    "workbench.iconTheme" = "material-icon-theme";
-    "editor.minimap.enabled" = false;
   };
 }

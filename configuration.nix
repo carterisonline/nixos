@@ -1,7 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system. Help is available in the configuration.nix(5) man page, on
-# https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-
 { config, pkgs, nix-software-center, plasma-manager, flatpaks, musnix, ... }:
 
 {
@@ -12,7 +8,6 @@
       ./subconf/environment.nix
       ./subconf/graphics.nix
       ./subconf/networking.nix
-      #./subconf/nixbuild.nix
       ./subconf/plymouth.nix
     ];
 
@@ -60,60 +55,44 @@
   services.libinput.enable = true;
   services.flatpak.enable = true;
 
-  environment.systemPackages = with pkgs; [
-    inotify-tools
-    easyeffects
-    zed
-    pragtical
-    nix-software-center.packages.${system}.nix-software-center
-    nix-index
-    gum
-    git
-    wget
-    nvtopPackages.full
-    rar
-    p7zip
-    mpv
-    android-tools
-    v4l-utils
-    ripgrep fd sd parallel-disk-usage
+  environment.systemPackages = with pkgs; [    
+    # Core
+    git wget p7zip rar ripgrep fd sd parallel-disk-usage
 
-    # Fonts
-    #inter
+    # Companion
+    clinfo
+    glxinfo
+    inotify-tools
+    nix-index
+    nvtopPackages.full
+    pciutils
+    v4l-utils
+    vulkan-tools
+    wayland-utils
 
     # Editors
     helix
 
-    # Nix language tools
-    nil
-    nixd
-    nixfmt-rfc-style
+    # GUI
+    libreoffice-qt6
+    nix-software-center.packages.${system}.nix-software-center
+    
+    # Language Tools
+    nil nixfmt-rfc-style nodePackages.vscode-json-languageserver
 
-    # Other lsps
-    nodePackages.vscode-json-languageserver
+    # Multimedia
+    easyeffects mpv
 
-    # Plasma deps
-    kdePackages.bluez-qt
-    kdePackages.kdeconnect-kde
-
-    # Deps for plasma info center
-    clinfo
-    glxinfo
-    pciutils
-    vulkan-tools
-    wayland-utils
-
-    # Wine
-    wineWowPackages.stagingFull
+    # Multiplatform
+    android-tools
     winetricks
-
-    # Python
-    python310 python310Packages.pip virtualenv
-
-    # C/Clang
-    libclang
+    wineWowPackages.stagingFull
+    
+    # Plasma deps
+    kdePackages.bluez-qt kdePackages.kdeconnect-kde
   ];
   
+  # Make Fish the shell, but only in interactive contexts.
   programs.bash = {
     interactiveShellInit = ''
       if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
