@@ -74,7 +74,7 @@
     helix
 
     # GUI
-    libreoffice-qt6
+    libreoffice-qt6-fresh
     nix-software-center.packages.${system}.nix-software-center
     
     # Language Tools
