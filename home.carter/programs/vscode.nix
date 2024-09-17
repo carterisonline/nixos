@@ -28,6 +28,15 @@ pkgs:
     "editor.formatOnSave" = true;
     "editor.minimap.enabled" = false;
     "[nix]"."editor.tabSize" = 2;
+    "nix.enableLanguageServer" = true;
+    "nix.serverPath" = "nil";
+    "rust-analyzer.completion.termSearch.enable" = true;
+    "rust-analyzer.imports.granularity.group" = "module";
+    "rust-analyzer.imports.prefix" = "crate";
+    "rust-analyzer.semanticHighlighting.operator.specialization.enable" = true;
+    "rust-analyzer.semanticHighlighting.punctuation.enable" = true;
+    "rust-analyzer.semanticHighlighting.punctuation.separate.macro.bang" = true;
+    "rust-analyzer.semanticHighlighting.punctuation.specialization.enable" = true;
     "window.titleBarStyle" = "custom";
     "workbench.iconTheme" = "material-icon-theme";
     "zig.initialSetupDone" = true;
