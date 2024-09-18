@@ -30,6 +30,15 @@ pkgs:
     "[nix]"."editor.tabSize" = 2;
     "nix.enableLanguageServer" = true;
     "nix.serverPath" = "nil";
+    "nix.serverSettings" = {
+      "nil" = {
+        "formatting" = {
+          "command" = [
+            "nixfmt"
+          ];
+        };
+      };
+    };
     "rust-analyzer.completion.termSearch.enable" = true;
     "rust-analyzer.imports.granularity.group" = "module";
     "rust-analyzer.imports.prefix" = "crate";
