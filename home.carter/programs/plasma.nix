@@ -2,7 +2,6 @@
   enable = true;
   workspace = {
     clickItemTo = "select";
-    # cursor.theme = "cz-Viator-Black-Hourglass";
     splashScreen.theme = "None";
   };
 
@@ -36,6 +35,7 @@
             "applications:firefox.desktop"
             "applications:org.kde.dolphin.desktop"
             "applications:org.kde.konsole.desktop"
+            "applications:com.bitwig.BitwigStudio.desktop"
           ];
         };
       }];
@@ -48,6 +48,8 @@
     command = "konsole";
   };
 
+  powerdevil.AC.autoSuspend.action = "nothing";
+
   shortcuts.kwin = {
     "Window Close" = "Meta+Shift+C";
     "Window Maximize" = "Meta+Shift+W";
@@ -55,9 +57,14 @@
   };
 
   configFile = {
-    "kwinrc"."ModifierOnlyShortcuts"."Meta" =
+    baloofilerc."Basic Settings".Indexing-Enabled = false;
+    kwinrc.ModifierOnlyShortcuts.Meta =
       "org.kde.kglobalaccel,/component/kwin,org.kde.kglobalaccel.Component,invokeShortcut,Overview";
-
-    baloofilerc."Basic Settings"."Indexing-Enabled" = false;
-  };
+    powerdevilrc."AC/Display".DisplayBrightness = 100;
+    powerdevilrc."AC/Display".UseProfileSpecificDisplayBrightness = true;
+    powerdevilrc."AC/Performance".PowerProfile = "balanced";
+    powerdevilrc."Battery/Display".DisplayBrightness = 25;
+    powerdevilrc."Battery/Display".UseProfileSpecificDisplayBrightness = true;
+    powerdevilrc."Battery/Performance".PowerProfile = "power-saver";    
+  };  
 }

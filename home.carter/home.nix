@@ -34,16 +34,6 @@
     ];
   };
 
-  programs.fish = {
-    enable = true;
-    functions = {
-      __fish_command_not_found_handler = {
-        body = "$HOME/Packages/tryout/tryout.sh $argv";
-        onEvent = "fish_command_not_found";
-      };
-    };
-  };
-
   programs.git = {
     enable = true;
     userName = "Carter Reeb";
@@ -95,6 +85,24 @@
     ];
   };
 
+  programs.konsole = {
+    enable = true;
+    defaultProfile = "xf84-modified";
+    profiles.xf84-modified = {
+      colorScheme = "Breeze";
+      extraConfig = {
+        General = {
+          Environment = "TERM=konsole-direct,COLORTERM=truecolor";
+          Parent = "FALLBACK/";
+          SemanticHints = 1;
+          SemanticInputClick = true;
+          SemanticUpDown = true;
+        };
+      };
+    };      
+  };
+
+  programs.fish = import ./programs/fish.nix pkgs;
   programs.plasma = import ./programs/plasma.nix;
   programs.vscode = import ./programs/vscode.nix pkgs;
 }
