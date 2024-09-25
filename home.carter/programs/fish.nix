@@ -4,7 +4,7 @@ pkgs:
   enable = true;
   functions = {
     __fish_command_not_found_handler = {
-      body = "$HOME/Packages/tryout/tryout.sh $argv";
+      body = ", $argv";
       onEvent = "fish_command_not_found";
     };
   };

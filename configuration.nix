@@ -1,4 +1,4 @@
-{ config, pkgs, nix-software-center, plasma-manager, flatpaks, musnix, nixos-conf-editor, ... }:
+{ config, pkgs, nix-software-center, nixos-conf-editor, ... }:
 
 {
   imports =
@@ -61,6 +61,7 @@
 
     # Companion
     clinfo
+    comma
     glxinfo
     inotify-tools
     nix-index
