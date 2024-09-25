@@ -1,4 +1,4 @@
-{ config, pkgs, nix-software-center, plasma-manager, flatpaks, musnix, ... }:
+{ config, pkgs, nix-software-center, plasma-manager, flatpaks, musnix, nixos-conf-editor, ... }:
 
 {
   imports =
@@ -76,6 +76,7 @@
     # GUI
     libreoffice-qt6-fresh
     nix-software-center.packages.${system}.nix-software-center
+    nixos-conf-editor.packages.${system}.nixos-conf-editor
     
     # Language Tools
     nil nixfmt-rfc-style nodePackages.vscode-json-languageserver
