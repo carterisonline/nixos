@@ -62,12 +62,6 @@
     }];
   };
 
-  programs.tealdeer = {
-    enable = true;
-    settings.updates.auto_update = true;
-    settings.updates.auto_update_interval_hours = 48;
-  };
-
   programs.kate = {
     enable = true;
     lsp.customServers = {
@@ -75,6 +69,23 @@
         command = [ "nil" ];
         url = "https://github.com/oxalica/nil";
         highlightingModeRegex = "^Nix$";
+      };
+    };
+  };
+  
+  programs.konsole = {
+    enable = true;
+    defaultProfile = "xf4-modified";
+    profiles.xf4-modified = {
+      colorScheme = "Breeze";
+      extraConfig = {
+        General = {
+          Environment = "TERM=konsole-direct,COLORTERM=truecolor";
+          Parent = "FALLBACK/";
+          SemanticHints = 1;
+          SemanticInputClick = true;
+          SemanticUpDown = true;
+        };
       };
     };
   };
@@ -90,21 +101,20 @@
     ];
   };
 
-  programs.konsole = {
+  programs.readline = {
     enable = true;
-    defaultProfile = "xf84-modified";
-    profiles.xf84-modified = {
-      colorScheme = "Breeze";
-      extraConfig = {
-        General = {
-          Environment = "TERM=konsole-direct,COLORTERM=truecolor";
-          Parent = "FALLBACK/";
-          SemanticHints = 1;
-          SemanticInputClick = true;
-          SemanticUpDown = true;
-        };
-      };
-    };      
+    bindings = {
+      "\\C-\\b" = "backward-kill-word";
+      "\\C-\\d" = "kill-word";
+      "\\C-\\M-\\b" = "backward-kill-line";
+      "\\C-\\M-\\d" = "kill-line";
+    };
+  };
+  
+  programs.tealdeer = {
+    enable = true;
+    settings.updates.auto_update = true;
+    settings.updates.auto_update_interval_hours = 48;
   };
 
   programs.fish = import ./programs/fish.nix pkgs;

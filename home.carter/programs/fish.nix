@@ -8,12 +8,14 @@ pkgs:
       onEvent = "fish_command_not_found";
     };
   };
-  shellInit = ''
-    direnv hook fish | source
-  '';
   loginShellInit = ''
+    direnv hook fish | source
+  
     set hydro_symbol_prompt ">"
     set base16_fish_shell_background "dark"
+
+    bind "^\\x7F" backward-kill-word
+    bind "^\\e\\[3~" kill-word
   '';
   plugins = [
     {
