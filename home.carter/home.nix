@@ -7,6 +7,14 @@
   
   home = {
     file."/home/carter/.gtkrc-2.0".force = true;
+    file."/home/carter/.config/kdeconnect/config" = {
+      force = true;
+      text = ''
+        [General]
+        name=NixOS
+        customDevices=100.112.114.61
+      '';
+    };
   
     packages = with pkgs; [ 
       bitwig-studio
