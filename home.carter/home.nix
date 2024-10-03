@@ -18,6 +18,7 @@
   
     packages = with pkgs; [ 
       bitwig-studio
+      cardinal
       helvum
       lutris
       obsidian
