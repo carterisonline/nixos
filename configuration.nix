@@ -91,7 +91,7 @@
     wineWowPackages.stagingFull
     
     # Plasma deps
-    kdePackages.bluez-qt kdePackages.kdeconnect-kde
+    kdePackages.bluez-qt kdePackages.kdeconnect-kde kdePackages.kdeplasma-addons
   ];
   
   # Make Fish the shell, but only in interactive contexts.
