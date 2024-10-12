@@ -27,7 +27,7 @@
 
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
-
+  hardware.bluetooth.input.General.ClassicBondedOnly = false;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
