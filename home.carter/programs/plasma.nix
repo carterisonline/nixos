@@ -6,7 +6,7 @@
   };
 
   panels = [
-    {
+    { # Main toolbar
       location = "top";
       height = 29;
       widgets = [
@@ -17,6 +17,11 @@
           digitalClock = {
             date.format.custom = "MMM d";
             date.position = "besideTime";
+            font = {
+              family = "Inter";
+              bold = true;
+              size = 7;
+            };
           };
         }
         "org.kde.plasma.panelspacer"
@@ -25,7 +30,7 @@
       ];
     }
 
-    {
+    { # Side taskbar
       location = "right";
       height = 60;
       hiding = "dodgewindows";
@@ -39,6 +44,43 @@
           ];
         };
       }];
+    }
+
+    { # Disappearing AppMenu for second screen
+      location = "top";
+      alignment = "center";
+      lengthMode = "fit";
+      hiding = "autohide";
+      floating = true;
+      height = 29;
+      screen = 1;
+
+      widgets = [
+        {
+          plasmaPanelColorizer = {
+            general = {
+              enable = true;
+              hideWidget = true;
+            };
+            panelBackground = {
+              originalBackground.hide = true;
+              customBackground.enable = false;
+            };
+            widgetBackground = {
+              enable = true;
+              shape.opacity = 1.0;
+              colorMode.mode = "static";
+              colors = {
+                system = {
+                  color = "neutralBackground";
+                  colorSet = "view";
+                };
+              };
+            };
+          };
+        }
+        "org.kde.plasma.appmenu"
+      ];
     }
   ];
 
