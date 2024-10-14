@@ -1,4 +1,10 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+
+{
+  imports = [
+    ./programs/gnome.nix
+  ];
+
   nixpkgs.config.allowUnfree = true;
 
   stylix = ( import ../stylix.nix pkgs ) // {
@@ -128,6 +134,5 @@
   };
 
   programs.fish = import ./programs/fish.nix pkgs;
-  programs.plasma = import ./programs/plasma.nix;
   programs.vscode = import ./programs/vscode.nix pkgs;
 }

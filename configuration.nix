@@ -6,6 +6,7 @@
       ./hardware-configuration.nix
       ./subconf/audio.nix
       ./subconf/environment.nix
+      ./subconf/gnome.nix
       ./subconf/graphics.nix
       ./subconf/networking.nix
       ./subconf/plymouth.nix
@@ -44,13 +45,6 @@
     extraGroups = [ "audio" "wheel" ];
   };
 
-  services.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true;
-  };
-
-  services.desktopManager.plasma6.enable = true;
-
   services.printing.enable = true;
   services.libinput.enable = true;
   services.flatpak.enable = true;
@@ -75,6 +69,7 @@
     helix
 
     # GUI
+    kitty
     libreoffice-qt6-fresh
     nix-software-center.packages.${system}.nix-software-center
     nixos-conf-editor.packages.${system}.nixos-conf-editor
@@ -89,9 +84,6 @@
     android-tools
     winetricks
     wineWowPackages.stagingFull
-    
-    # Plasma deps
-    kdePackages.bluez-qt kdePackages.kdeconnect-kde kdePackages.kdeplasma-addons
   ];
   
   # Make Fish the shell, but only in interactive contexts.
