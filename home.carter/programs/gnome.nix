@@ -21,7 +21,7 @@ in
         clock-format = "12h";
         clock-show-weekday = true;
         color-scheme = "prefer-dark";
-        enable-hot-corners = true;
+        enable-hot-corners = false;
         font-antialiasing = "rgba";
         gtk-theme = "adw-gtk3";
         icon-theme = "Adwaita";
@@ -40,6 +40,10 @@ in
         button-layout = "appmenu:close";
         resize-with-right-button = true;
         titlebar-font = "Inter Bold 11";
+      };
+
+      "org/gnome/mutter" = {
+        edge-tiling = true;
       };
 
       "org/gnome/settings-daemon/plugins/power" = {
