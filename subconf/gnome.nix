@@ -1,6 +1,9 @@
 {pkgs, ...}:
 
 {
+  environment.systemPackages = [
+    pkgs.endeavour
+  ];
   environment.gnome.excludePackages = (with pkgs; [
     gnome-photos
     gnome-text-editor
