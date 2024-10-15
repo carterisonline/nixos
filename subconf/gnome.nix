@@ -2,11 +2,19 @@
 
 {
   environment.systemPackages = with pkgs; [
-    endeavour
+    authenticator
+    commit
+    eartag
+    elastic
+    errands
+    eyedropper
+    junction
+    metadata-cleaner
     resources
     wike
   ];
   environment.gnome.excludePackages = (with pkgs; [
+    gnome-console
     gnome-photos
     gnome-text-editor
     gnome-tour
