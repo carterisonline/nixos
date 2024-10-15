@@ -4,6 +4,7 @@
   environment.systemPackages = with pkgs; [
     endeavour
     resources
+    wike
   ];
   environment.gnome.excludePackages = (with pkgs; [
     gnome-photos
