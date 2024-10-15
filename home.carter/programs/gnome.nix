@@ -72,6 +72,7 @@ in
           "firefox.desktop"
           "org.gnome.Nautilus.desktop"
           "com.bitwig.BitwigStudio.desktop"
+          "org.gnome.Todo.desktop"
         ];
       };
 
