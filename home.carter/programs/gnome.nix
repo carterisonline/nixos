@@ -21,7 +21,7 @@ in
         clock-format = "12h";
         clock-show-weekday = true;
         color-scheme = "prefer-dark";
-        enable-hot-corners = false;
+        enable-hot-corners = true;
         font-antialiasing = "rgba";
         gtk-theme = "adw-gtk3";
         icon-theme = "Adwaita";
