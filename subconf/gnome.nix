@@ -1,26 +1,28 @@
 {pkgs, ...}:
 
 {
-  environment.systemPackages = [
-    pkgs.endeavour
+  environment.systemPackages = with pkgs; [
+    endeavour
+    resources
   ];
   environment.gnome.excludePackages = (with pkgs; [
     gnome-photos
     gnome-text-editor
     gnome-tour
   ]) ++ (with pkgs.gnome; [
-    cheese
-    gnome-music
-    gnome-terminal
-    epiphany
-    geary
-    evince
-    gnome-characters
-    totem
-    tali
-    iagno
-    hitori
     atomix
+    cheese
+    epiphany
+    evince
+    geary
+    gnome-characters
+    gnome-music
+    gnome-system-monitor
+    gnome-terminal
+    hitori
+    iagno
+    tali
+    totem
   ]);
   programs.dconf.enable = true;
   services.xserver = {
