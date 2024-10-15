@@ -110,4 +110,6 @@ in
       '';
     };
   };
+
+  programs.git.extraConfig.core.editor = "re.sonny.Commit";
 }
