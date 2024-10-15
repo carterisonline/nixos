@@ -5,6 +5,7 @@ let
     blur-my-shell
     dash-to-dock
     gsconnect
+    steal-my-focus-window
   ];
 in
 {
