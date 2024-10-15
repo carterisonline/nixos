@@ -57,7 +57,13 @@ in
         command = "kitty";
         name = "Launch terminal";
       };
-      
+
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
+        binding = "<Ctrl><Alt>Escape";
+        command = "resources";
+        name = "Launch resources";
+      };      
+
       "org/gnome/shell" = {
         disable-user-extensions = false;
         enabled-extensions = builtins.map (x: x.extensionUuid) gnomeExtensions;
