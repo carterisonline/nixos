@@ -37,4 +37,8 @@ pkgs:
       };
     }
   ];
+  shellAliases = {
+    gc = "git add . && git commit -m";
+    sgc = "sudo git add . && sudo git commit -m";
+  };
 }
