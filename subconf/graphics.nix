@@ -32,5 +32,6 @@
       allowExternalGpu = true;
     };
   };
+  hardware.nvidia-container-toolkit.enable = true;
   services.xserver.videoDrivers = ["nvidia"];
 }

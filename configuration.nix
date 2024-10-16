@@ -44,7 +44,7 @@
     isNormalUser = true;
     home = "/home/carter";
     description = "Carter Reeb";
-    extraGroups = [ "audio" "wheel" ];
+    extraGroups = [ "audio" "docker" "wheel" ];
   };
 
   services.printing.enable = true;
@@ -107,6 +107,10 @@
   };
 
   programs.steam.enable = true;
+
+  virtualisation.docker = {
+    enable = true;
+  };
 
   stylix = import ./stylix.nix pkgs;
 }
