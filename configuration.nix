@@ -51,6 +51,21 @@
   services.libinput.enable = true;
   services.flatpak.enable = true;
 
+  services.ananicy = {
+    enable = true;
+    package = pkgs.ananicy-cpp;
+    rulesProvider = pkgs.ananicy-cpp;
+    extraRules = [
+      {
+        # Do what Windows does with Task Manager and make `resources` a top-priority process
+        name = "resources";
+        nice = -20;
+        ioclass = "realtime";
+        oom_score_adj = -999;
+      }
+    ];
+  };
+
   environment.systemPackages = with pkgs; [    
     # Core
     git wget p7zip rar ripgrep fd sd parallel-disk-usage
