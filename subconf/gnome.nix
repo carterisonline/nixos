@@ -10,7 +10,7 @@
     eyedropper
     junction
     metadata-cleaner
-    resources
+    mission-center
     wike
   ];
   environment.gnome.excludePackages = (with pkgs; [
