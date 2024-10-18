@@ -46,7 +46,6 @@
     packages = [
       "flathub:app/com.chatterino.chatterino/x86_64/stable"
       "flathub:app/com.discordapp.Discord/x86_64/stable"
-      "flathub:app/org.kde.kalk/x86_64/stable"
     ];
   };
 
