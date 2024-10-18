@@ -1,0 +1,6 @@
+[Sound Theme]
+Name=Prologue
+Directories=stereo
+
+[stereo]
+OutputProfile=stereo

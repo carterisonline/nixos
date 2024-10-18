@@ -28,6 +28,10 @@ in
         scaling-factor = 1;
       };
 
+      "org/gnome/desktop/sound" = {
+        theme-name = "prologue";
+      };
+
       "org/gnome/desktop/wm/keybindings" = {
         close = [ "<Super><Shift>c" ];
         maximize = [ "<Super><Shift>w" ];

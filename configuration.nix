@@ -1,5 +1,8 @@
 { config, pkgs, nix-software-center, nixos-conf-editor, ... }:
 
+let
+  prologue-sound-theme = pkgs.callPackage ./packages/prologue-sound-theme/default.nix {};
+in
 {
   imports =
     [
@@ -95,7 +98,7 @@
     nil nixfmt-rfc-style nodePackages.vscode-json-languageserver
 
     # Multimedia
-    easyeffects mpv
+    easyeffects mpv prologue-sound-theme
 
     # Multiplatform
     android-tools
