@@ -34,12 +34,19 @@ in
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
   hardware.bluetooth.input.General.ClassicBondedOnly = false;
+  
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
-
   boot.supportedFilesystems = [ "bcachefs" ];
   boot.extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback ];
+  boot.extraModprobeConfig = ''
+    options kvm_intel nested=1
+    options kvm_intel emulate_invalid_guest_state=0
+    options kvm ignore_msrs=1
+  '';
+
+  virtualisation.libvirtd.enable = true;
 
   time.timeZone = "America/New_York";
 
@@ -47,7 +54,7 @@ in
     isNormalUser = true;
     home = "/home/carter";
     description = "Carter Reeb";
-    extraGroups = [ "audio" "docker" "wheel" ];
+    extraGroups = [ "audio" "docker" "libvirtd" "wheel" ];
   };
 
   services.printing.enable = true;
