@@ -21,6 +21,28 @@ pkgs:
       key = "alt+a";
       command = "editor.action.quickFix";
     }
+    {
+      key = "numpad_add";
+      command = "editor.action.revealDefinition";
+      when = "editorHasDefinitionProvider && editorTextFocus";
+    }
+    {
+      key = "ctrl+e s";
+      command = "editor.action.deleteLines";
+      when = "textInputFocus && !editorReadonly";
+    }
+    {
+      key = "ctrl+e a";
+      command = "deleteAllLeft";
+    }
+    {
+      key = "ctrl+e d";
+      command = "deleteAllRight";
+    }
+    {
+      key = "ctrl+e w";
+      command = "deleteInsideWord";
+    }
   ];
 
   userSettings = {
