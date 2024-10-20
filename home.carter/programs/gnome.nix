@@ -6,6 +6,7 @@ let
     dash-to-dock
     gsconnect
     steal-my-focus-window
+    vitals
   ];
 in
 {
