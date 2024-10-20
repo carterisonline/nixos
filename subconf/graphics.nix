@@ -8,6 +8,7 @@
     enable = true;
     extraPackages = with pkgs; [
       onevpl-intel-gpu
+      intel-media-driver
       vaapiVdpau
       libvdpau-va-gl
     ];
