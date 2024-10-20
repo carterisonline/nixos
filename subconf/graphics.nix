@@ -12,6 +12,11 @@
       vaapiVdpau
       libvdpau-va-gl
     ];
+    extraPackages32 = with pkgs.driversi686Linux; [
+      intel-media-driver
+      vaapiVdpau
+      libvdpau-va-gl
+    ];
   };
   hardware.nvidia = {
     modesetting.enable = true;
