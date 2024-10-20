@@ -6,6 +6,8 @@
   environment.systemPackages = [ pkgs.cudatoolkit ];
   hardware.opengl = {
     enable = true;
+    driSupport = true;
+    driSupport32Bit = true;
     extraPackages = with pkgs; [
       onevpl-intel-gpu
       intel-media-driver
