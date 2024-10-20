@@ -96,6 +96,7 @@ in
     helix
 
     # GUI
+    gamescope
     kitty
     libreoffice-qt6-fresh
     nix-software-center.packages.${system}.nix-software-center
