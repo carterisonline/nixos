@@ -8,6 +8,8 @@
     enable = true;
     extraPackages = with pkgs; [
       onevpl-intel-gpu
+      vaapiVdpau
+      libvdpau-va-gl
     ];
   };
   hardware.nvidia = {
