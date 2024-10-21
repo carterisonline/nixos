@@ -38,6 +38,12 @@ in
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
+  # Disable watchdog. Re-enable this if you get panics
+  boot.kernelParams = [ "nmi_watchdog=0" ];
+  boot.kernel.sysctl = {
+    # Only write to the disk every 60s
+    "vm.dirty_writeback_centisecs" = 6000;
+  };
   boot.supportedFilesystems = [ "bcachefs" ];
   boot.extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback ];
   boot.extraModprobeConfig = ''
@@ -45,6 +51,8 @@ in
     options kvm_intel emulate_invalid_guest_state=0
     options kvm ignore_msrs=1
   '';
+  # Only write to the disk every 60s
+  fileSystems."/".options = [ "commit=60" ];
 
   virtualisation.libvirtd.enable = true;
 
@@ -74,6 +82,16 @@ in
         oom_score_adj = -999;
       }
     ];
+  };
+
+  services.udev = {
+    enable = true;
+    # Enable USB autosuspend for Linux USB Hubs, fingerprint reader and webcam
+    extraRules = ''
+      ACTION=="add", SUBSYSTEM=="usb", TEST=="power/control", ATTR{idVendor}=="1d6b", ATTR{power/control}="auto"
+      ACTION=="add", SUBSYSTEM=="usb", TEST=="power/control", ATTR{idVendor}=="06cb", ATTR{idProduct}=="00bd", ATTR{power/control}="auto"
+      ACTION=="add", SUBSYSTEM=="usb", TEST=="power/control", ATTR{idVendor}=="30c9", ATTR{idProduct}=="001b", ATTR{power/control}="auto"
+    '';
   };
 
   environment.systemPackages = with pkgs; [    
