@@ -1,7 +1,9 @@
 {pkgs, ...}:
 
 let
+  auto-screen-brightness = pkgs.callPackage ../../packages/gnomeExtensions.auto-screen-brightness/default.nix {};
   gnomeExtensions = with pkgs.gnomeExtensions; [
+    auto-screen-brightness
     blur-my-shell
     dash-to-dock
     gsconnect
