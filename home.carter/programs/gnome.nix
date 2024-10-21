@@ -87,6 +87,11 @@ in
         ];
       };
 
+      "org/gnome/shell/extensions/auto-screen-brightness" = {
+        brightness-ac = 100;
+        brightness-battery = 25;
+      };
+
       "org/gnome/shell/extensions/dash-to-dock" = {
         background-color = "rgb(33,15,74)";
         background-opacity = 1.0;
@@ -96,6 +101,13 @@ in
         extend-height = true;
         running-indicator-style = "DOTS";
         transparency-mode = "FIXED";
+      };
+
+      "org/gnome/shell/extensions/vitals" = {
+        hide-zeros = true;
+        hot-sensors = ["_processor_frequency_" "_battery_rate_" "_temperature_thinkpad_cpu_"];
+        icon-style = 1;
+        position-in-panel = 2;
       };
 
       "org/gnome/shell/weather" = {
