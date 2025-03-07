@@ -58,8 +58,7 @@
         (pkgFromFlake isd)
         (pkgOverlay [ "bitwig-studio" ] bitwig-studio)
         (pkgOverlay [ "archipelago" "plugdata" ] nixpkgs-unstable)
-                
-        stylix.nixosModules.stylix
+
         home-manager.nixosModules.home-manager {
           home-manager = {
             useGlobalPkgs = true;
@@ -70,7 +69,7 @@
             users.carter = import ./home.carter/home.nix;
           };
         }
-
+        
         {
           system.stateVersion = "24.05"; # DO NOT CHANGE OR REMOVE
         }
