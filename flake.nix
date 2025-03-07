@@ -46,6 +46,7 @@
       specialArgs = attrs;
       
       modules = [
+        (pkgOverlay [ "fish" ] nixpkgs-unstable)
         ./settings.nix
         ./configuration.nix
         
