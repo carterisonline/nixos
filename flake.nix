@@ -4,8 +4,7 @@
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     bitwig-studio.url = "github:NixOS/nixpkgs/05bbf675397d5366259409139039af8077d695ce";
     
-    stylix.url = "github:danth/stylix";
-    stylix.inputs.nixpkgs.follows = "nixpkgs";
+    stylix.url = "github:danth/stylix/release-24.11";
     home-manager.url = "github:nix-community/home-manager/release-24.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     flatpaks.url = "github:GermanBread/declarative-flatpak/stable-v3";
