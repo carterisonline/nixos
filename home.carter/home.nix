@@ -27,6 +27,7 @@
   
     packages = with pkgs; [ 
       cardinal
+      furnace
       gale
       godot_4-mono
       helvum
