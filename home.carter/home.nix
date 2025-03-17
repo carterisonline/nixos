@@ -26,16 +26,20 @@
     sessionVariables.NIXPKGS_ALLOW_UNFREE = 1;
   
     packages = with pkgs; [ 
+      bespokesynth
       cardinal
       furnace
       gale
       godot_4-mono
       helvum
+      lsp-plugins
       lutris
       obsidian
       scrcpy
+      vital
       yabridge
       yabridgectl
+      zynaddsubfx
    ];
   
     username = "carter";
