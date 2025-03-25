@@ -58,7 +58,7 @@
         (pkgFromFlake [ "nixGLIntel" "nixVulkanIntel" ] nixGL)
         (pkgFromFlake isd)
         (pkgOverlay [ "bitwig-studio" ] bitwig-studio)
-        (pkgOverlay [ "archipelago" "plugdata" ] nixpkgs-unstable)
+        (pkgOverlay [ "archipelago" "plugdata" "zed-editor" ] nixpkgs-unstable)
                 
         stylix.nixosModules.stylix
         home-manager.nixosModules.home-manager {
