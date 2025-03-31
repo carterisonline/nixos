@@ -12,6 +12,7 @@ pkgs:
     rust-lang.rust-analyzer
     samuelcolvin.jinjahtml
     tamasfe.even-better-toml
+    teabyii.ayu
     ziglang.vscode-zig
     usernamehw.errorlens
   ];
@@ -78,6 +79,7 @@ pkgs:
     "rust-analyzer.semanticHighlighting.punctuation.separate.macro.bang" = true;
     "rust-analyzer.semanticHighlighting.punctuation.specialization.enable" = true;
     "window.titleBarStyle" = "custom";
+    "workbench.colorTheme" = "Ayu Mirage Bordered";
     "workbench.iconTheme" = "material-icon-theme";
     "zig.path" = "zig";
     "zig.zls.path" = "zls";
