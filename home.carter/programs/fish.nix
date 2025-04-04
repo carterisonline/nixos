@@ -69,6 +69,9 @@ pkgs:
         commandline --cursor 0
       end
     '';
+    nsh = ''
+      nix shell $argv -c fish
+    '';
   };
   loginShellInit = ''
     direnv hook fish | source
@@ -107,6 +110,7 @@ pkgs:
   shellAliases = {
     gc = "git add . && git commit -m";
     sgc = "sudo git add . && sudo git commit -m";
+    snsh = "sudo nsh";
     rt-gl-intel = "nixGLIntel nix-alien -f";
     rt-vk-intel = "nixVulkanIntel nix-alien -f";
     nixos-rebuild-nonfree = "sudo bash -c 'export NIXPKGS_ALLOW_UNFREE=1 && nixos-rebuild switch --impure -L'";
