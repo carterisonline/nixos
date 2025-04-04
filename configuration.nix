@@ -96,6 +96,7 @@
     # GUI
     libreoffice-qt6-fresh
     mangohud mangojuice vkbasalt vkbasalt-cli renderdoc
+    jetbrains.idea-community-bin
     
     # Language Tools
     nil nixfmt-rfc-style nodePackages.vscode-json-languageserver
