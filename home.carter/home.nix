@@ -32,6 +32,7 @@
       gale
       godot_4-mono
       helvum
+      imhex
       lsp-plugins
       lutris
       obsidian
