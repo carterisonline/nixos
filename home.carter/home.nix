@@ -51,10 +51,16 @@
     enableModule = true;
     remotes = {
       "flathub" = "https://dl.flathub.org/repo/flathub.flatpakrepo";
+      "flathub-beta" = "https://dl.flathub.org/beta-repo/flathub-beta.flatpakrepo";
     };
     packages = [
       "flathub:app/com.chatterino.chatterino/x86_64/stable"
-      "flathub:app/com.discordapp.Discord/x86_64/stable"
+      "flathub:app/org.gimp.GIMP/x86_64/stable"
+      "flathub:app/org.kde.kdenlive/x86_64/stable"
+      "flathub:app/org.nickvision.tubeconverter/x86_64/stable"
+      "flathub:app/org.prismlauncher.PrismLauncher/x86_64/stable"
+      "flathub:app/net.mkiol.SpeechNote/x86_64/stable"
+      "flathub-beta:app/com.discordapp.DiscordCanary/x86_64/beta"
     ];
   };
 
