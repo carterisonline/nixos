@@ -80,6 +80,7 @@
     comma
     frida-tools
     fzf
+    gamemode
     glxinfo
     inotify-tools
     nix-index
