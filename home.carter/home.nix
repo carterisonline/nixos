@@ -36,6 +36,7 @@
       lsp-plugins
       lutris
       obsidian
+      rpcs3
       scrcpy
       vital
       yabridge
