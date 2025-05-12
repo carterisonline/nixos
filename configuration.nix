@@ -76,6 +76,7 @@
     git wget p7zip rar ripgrep fd sd parallel-disk-usage gocryptfs
 
     # Companion
+    auto-patchelf
     clinfo
     comma
     frida-tools
