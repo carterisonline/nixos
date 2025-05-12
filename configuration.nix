@@ -87,6 +87,7 @@
     nix-index
     nmap
     nvtopPackages.full
+    patchelf
     pciutils
     v4l-utils
     vulkan-tools
