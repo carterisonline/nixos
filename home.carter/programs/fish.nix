@@ -92,6 +92,15 @@ pkgs:
     sharepath = ''
       echo "$(pkgpath $argv[1])/share"
     '';
+    pkgwith = ''
+      nix-locate -w --top-level --at-root --minimal $argv[1]
+    '';
+    libwith = ''
+      pkgwith "/lib/$argv[1]"
+    '';
+    binwith = ''
+      pkgwith "/bin/$argv[1]"
+    '';
   };
   loginShellInit = ''
     direnv hook fish | source
