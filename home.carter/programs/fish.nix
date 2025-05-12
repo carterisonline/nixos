@@ -80,6 +80,18 @@ pkgs:
 
       nsh $pkgs
     '';
+    pkgpath = ''
+      nix eval --raw "nixpkgs#$argv[1].outPath"
+    '';
+    libpath = ''
+      echo "$(pkgpath $argv[1])/lib"
+    '';
+    binpath = ''
+      echo "$(pkgpath $argv[1])/bin"
+    '';
+    sharepath = ''
+      echo "$(pkgpath $argv[1])/share"
+    '';
   };
   loginShellInit = ''
     direnv hook fish | source
