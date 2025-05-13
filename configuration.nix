@@ -102,7 +102,7 @@
     jetbrains.idea-community-bin
     
     # Language Tools
-    nil nixfmt-rfc-style nodePackages.vscode-json-languageserver
+    nixd nixfmt-rfc-style nodePackages.vscode-json-languageserver
 
     # Manpages
     linux-manual man-pages man-pages-posix

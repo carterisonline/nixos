@@ -53,9 +53,12 @@ pkgs:
     "editor.minimap.enabled" = false;
     "[nix]"."editor.tabSize" = 2;
     "nix.enableLanguageServer" = true;
-    "nix.serverPath" = "nil";
+    "nix.serverPath" = "nixd";
     "nix.serverSettings" = {
-      "nil" = {
+      "nixd" = {
+        "nixpkgs" = {
+            "expr" = "import (builtins.getFlake \"\${workspaceFolder}\").inputs.nixpkgs { }";
+        };
         "formatting" = {
           "command" = [
             "nixfmt"
