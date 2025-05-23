@@ -38,6 +38,7 @@
       obsidian
       rpcs3
       scrcpy
+      strawberry
       vital
       yabridge
       yabridgectl
