@@ -10,7 +10,7 @@
     };
     
     # Disable watchdog. Re-enable this if you get panics
-    kernelParams = [ "nmi_watchdog=0" ];
+    # kernelParams = [ "nmi_watchdog=0" ];
 
     kernel.sysctl = {
       "kernel.sysrq" = 1;
