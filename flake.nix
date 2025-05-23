@@ -7,7 +7,7 @@
     stylix.url = "github:danth/stylix/release-25.05";
     home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    flatpaks.url = "github:GermanBread/declarative-flatpak/stable-v3";
+    flatpaks.url = "github:in-a-dil-emma/declarative-flatpak/dev";
     flatpaks.inputs.nixpkgs.follows = "nixpkgs";
     nix-alien.url = "github:thiagokokada/nix-alien";
     nix-alien.inputs.nixpkgs.follows = "nixpkgs";
@@ -66,7 +66,7 @@
             useGlobalPkgs = true;
             useUserPackages = true;
             sharedModules = [
-              flatpaks.homeManagerModules.default
+              flatpaks.homeModule
             ];
             users.carter = import ./home.carter/home.nix;
           };
