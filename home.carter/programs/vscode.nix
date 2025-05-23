@@ -7,7 +7,7 @@ pkgs:
   extensions = with pkgs.vscode-extensions; [
     ibm.output-colorizer
     jnoortheen.nix-ide
-    nvarner.typst-lsp
+    # nvarner.typst-lsp
     pkief.material-icon-theme
     rust-lang.rust-analyzer
     samuelcolvin.jinjahtml
