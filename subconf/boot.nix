@@ -15,7 +15,7 @@
     kernel.sysctl = {
       "kernel.sysrq" = 1;
       # Only write to the disk every 60s
-      "vm.dirty_writeback_centisecs" = 6000;
+      # "vm.dirty_writeback_centisecs" = 6000;
     };
     
     supportedFilesystems = [ "bcachefs" ];
