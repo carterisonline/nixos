@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   imports = [
@@ -51,18 +51,19 @@
 
   services.flatpak = {
     enable = true;
-    remotes = {
-      "flathub" = "https://dl.flathub.org/repo/flathub.flatpakrepo";
-      "flathub-beta" = "https://dl.flathub.org/beta-repo/flathub-beta.flatpakrepo";
-    };
+    uninstallUnmanaged = false;
+    remotes = lib.mkOptionDefault [{
+      name = "flathub";
+      location = "https://dl.flathub.org/repo/flathub.flatpakrepo";
+    }];
     packages = [
-      "flathub:app/com.chatterino.chatterino/x86_64/stable"
-      "flathub:app/org.gimp.GIMP/x86_64/stable"
-      "flathub:app/org.kde.kdenlive/x86_64/stable"
-      "flathub:app/org.nickvision.tubeconverter/x86_64/stable"
-      "flathub:app/org.prismlauncher.PrismLauncher/x86_64/stable"
-      "flathub:app/net.mkiol.SpeechNote/x86_64/stable"
-      "flathub-beta:app/com.discordapp.DiscordCanary/x86_64/beta"
+      "com.chatterino.chatterino"
+      "org.gimp.GIMP"
+      "org.kde.kdenlive"
+      "org.nickvision.tubeconverter"
+      "org.prismlauncher.PrismLauncher"
+      "net.mkiol.SpeechNote"
+      "com.discordapp.Discord"
     ];
   };
 

@@ -7,8 +7,8 @@
     stylix.url = "github:danth/stylix/release-25.05";
     home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    flatpaks.url = "github:in-a-dil-emma/declarative-flatpak/dev";
-    flatpaks.inputs.nixpkgs.follows = "nixpkgs";
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.6.0";
+    nix-flatpak.inputs.nixpkgs.follows = "nixpkgs";
     nix-alien.url = "github:thiagokokada/nix-alien";
     nix-alien.inputs.nixpkgs.follows = "nixpkgs";
     nixGL.url = "github:guibou/nixGL";
@@ -21,7 +21,7 @@
     isd.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nixpkgs, nixpkgs-unstable, bitwig-studio, stylix, home-manager, flatpaks, nix-alien, nixGL, umu, nix-search-cli, isd, ... }@attrs:
+  outputs = { nixpkgs, nixpkgs-unstable, bitwig-studio, stylix, home-manager, nix-flatpak, nix-alien, nixGL, umu, nix-search-cli, isd, ... }@attrs:
   let
     system = "x86_64-linux";
     pkgUse = x: { environment.systemPackages = x; };
@@ -66,7 +66,7 @@
             useGlobalPkgs = true;
             useUserPackages = true;
             sharedModules = [
-              flatpaks.homeModule
+              nix-flatpak.homeManagerModules.nix-flatpak
             ];
             users.carter = import ./home.carter/home.nix;
           };
