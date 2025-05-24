@@ -21,11 +21,6 @@
     enable = true;
     enableGraphical  = true;
   };
-  
-  programs.appimage = {
-    enable = true;
-    binfmt = true;
-  };
   # Only write to the disk every 60s
   fileSystems."/".options = [ "commit=60" ];
 
