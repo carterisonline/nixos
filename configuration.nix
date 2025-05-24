@@ -104,6 +104,7 @@
 
     # Multimedia
     easyeffects mpv
+    yabridge yabridgectl
 
     # Multiplatform
     android-tools

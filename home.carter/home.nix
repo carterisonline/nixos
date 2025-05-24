@@ -40,8 +40,8 @@
       scrcpy
       strawberry
       vital
-      yabridge
-      yabridgectl
+      # yabridge
+      # yabridgectl
       zynaddsubfx
    ];
   
