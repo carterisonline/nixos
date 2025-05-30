@@ -58,6 +58,9 @@
 
     # System Management
     nix-index
+
+    # Terminal
+    kitty
   ] ++ (with pkgs.gst_all_1; [
     gstreamer
     gst-plugins-base
