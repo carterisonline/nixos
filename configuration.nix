@@ -38,49 +38,46 @@
     ];
   };
 
+  # System Packages should be the minimal set of programs which helps users
+  # manage their system, diagnose issues, and get most things done.
   environment.systemPackages = with pkgs; [    
     # Core
-    git wget p7zip rar ripgrep fd sd parallel-disk-usage gocryptfs
+    git wget ripgrep fd fzf sd parallel-disk-usage
 
-    # Companion
-    auto-patchelf
-    clinfo
-    comma
-    frida-tools
-    fzf
-    gamemode
-    glxinfo
-    inotify-tools
-    nix-index
-    nmap
-    nvtopPackages.full
-    patchelf
-    pciutils
-    v4l-utils
-    vulkan-tools
-    wayland-utils
-
-    # Editors
-    helix
-
-    # GUI
-    libreoffice-qt6-fresh
-    mangohud mangojuice vkbasalt vkbasalt-cli renderdoc
-    jetbrains.idea-community-bin
-    
-    # Language Tools
-    nixd nixfmt-rfc-style nodePackages.vscode-json-languageserver
-
-    # Manpages
+    # Documentation
     linux-manual man-pages man-pages-posix
 
+    # Document Management
+    helix
+    libreoffice-qt6-fresh
+    nixd
+    nixfmt-rfc-style
+    
+    # Monitoring
+    ## GPU
+    clinfo
+    glxinfo
+    nvtopPackages.full
+    vulkan-tools
+    ## Hardware
+    pciutils
+    usbutils
+    ## I/O Management
+    inotify-tools
+    v4l-utils
+    wayland-utils
+    ## Network
+    nmap
+
     # Multimedia
-    easyeffects mpv
+    mpv
 
     # Multiplatform
-    android-tools
     winetricks
     wineWowPackages.stagingFull
+
+    # System Management
+    nix-index
   ] ++ (with pkgs.gst_all_1; [
     gstreamer
     gst-plugins-base

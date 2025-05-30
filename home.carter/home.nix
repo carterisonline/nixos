@@ -26,22 +26,31 @@
     sessionVariables.NIXPKGS_ALLOW_UNFREE = 1;
   
     packages = with pkgs; [ 
+      android-tools
+      auto-patchelf
       bespokesynth
       cardinal
+      comma
+      easyeffects
       furnace
+      frida-tools
       gale
+      gamemode
+      gocryptfs
       godot_4-mono
       helvum
       imhex
+      jetbrains.idea-community-bin
       lsp-plugins
       lutris
+      nodePackages.vscode-json-languageserver
       obsidian
+      patchelf
+      renderdoc
       rpcs3
       scrcpy
       strawberry
       vital
-      # yabridge
-      # yabridgectl
       zynaddsubfx
    ];
   
