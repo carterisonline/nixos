@@ -2,7 +2,6 @@
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
-    input.General.ClassicBondedOnly = false;
   };
   
   hardware.logitech.wireless = {
