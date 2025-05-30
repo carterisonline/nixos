@@ -3,12 +3,10 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     bitwig-studio.url = "github:NixOS/nixpkgs/05bbf675397d5366259409139039af8077d695ce";
-    
     stylix.url = "github:danth/stylix/release-25.05";
     home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.6.0";
-    nix-flatpak.inputs.nixpkgs.follows = "nixpkgs";
     nix-alien.url = "github:thiagokokada/nix-alien";
     nix-alien.inputs.nixpkgs.follows = "nixpkgs";
     nixGL.url = "github:guibou/nixGL";
@@ -35,9 +33,8 @@
       ];
     });
 
-    umux = umu.packages.${system}.umu.override {
-      version = umu.shortRev;
-      truststore = true;
+    umux = umu.packages.${system}.umu-launcher.override {
+      withTruststore = true;
     };
   in
    {

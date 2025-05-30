@@ -2,11 +2,11 @@
 
 {
   imports = [
+    ./programs/fish.nix
     ./programs/gnome.nix
     ./programs/helix.nix
+    ./programs/vscode.nix
   ];
-
-  nixpkgs.config.allowUnfree = true;
 
   stylix = ( import ../stylix.nix pkgs ) // {
     targets.vscode.enable = false;
@@ -101,7 +101,7 @@
     languages.language = [{
       name = "nix";
       auto-format = true;
-      formatter.command = "${pkgs.nixfmt}/bin/nixfmt";
+      formatter.command = "${pkgs.nixfmt-classic}/bin/nixfmt";
     }];
   };
 
@@ -142,7 +142,4 @@
     settings.updates.auto_update = true;
     settings.updates.auto_update_interval_hours = 48;
   };
-
-  programs.fish = import ./programs/fish.nix pkgs;
-  programs.vscode = import ./programs/vscode.nix pkgs;
 }

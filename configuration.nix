@@ -31,7 +31,7 @@
     helix
     libreoffice-qt6-fresh
     nixd
-    nixfmt-rfc-style
+    nixfmt-classic
     
     # Monitoring
     ## GPU
@@ -61,19 +61,8 @@
 
     # Terminal
     kitty
-  ] ++ (with pkgs.gst_all_1; [
-    gstreamer
-    gst-plugins-base
-    gst-libav
-    gst-vaapi
-  
-    # in order of quality
-    gst-plugins-good
-    gst-plugins-bad
-    gst-plugins-ugly
-    gst-plugins-rs
-  ]);
-      
+  ];
+        
   # Make Fish the shell, but only in interactive contexts.
   programs.bash = {
     interactiveShellInit = ''
