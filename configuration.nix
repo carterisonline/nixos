@@ -6,10 +6,10 @@
       ./hardware-configuration.nix
       ./subconf/audio.nix
       ./subconf/boot.nix
+      ./subconf/connectivity.nix
       ./subconf/environment.nix
       ./subconf/gnome.nix
       ./subconf/graphics.nix
-      ./subconf/networking.nix
       ./subconf/plymouth.nix
       ./subconf/security.nix
       ./subconf/virtualization.nix
