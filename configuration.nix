@@ -91,32 +91,10 @@
     };
   };
 
-  programs.gamescope = {
-    enable = true;
-    capSysNice = false;
-  };
-
   programs.nix-ld.enable = true;
 
   programs.steam = {
     enable = true;
-    gamescopeSession = {
-      enable = true;
-      args = [ "--adaptive-sync" "--hdr-enabled" "--prefer-vk-device" "22:00.0" "-r 240" ];
-      env = {
-        # from https://steamcommunity.com/app/221410/discussions/0/4700160821455702960/
-        ENABLE_GAMESCOPE_WSI = "1";
-        GAMESCOPE_NV12_COLORSPACE = "k_EStreamColorspace_BT601";
-        __GL_MaxFramesAllowed = "1";
-        SRT_URLOPEN_PREFER_STEAM = "1";
-        STEAM_GAMESCOPE_HAS_TEARING_SUPPORT = "1";
-        STEAM_GAMESCOPE_HDR_SUPPORTED = "1";
-        STEAM_GAMESCOPE_NIS_SUPPORTED = "1";
-        STEAM_GAMESCOPE_TEARING_SUPPORTED = "1";
-        STEAM_GAMESCOPE_VRR_SUPPORTED = "1";
-        STEAM_MULTIPLE_XWAYLANDS = "1";
-      };
-    };
   };
 
   stylix = import ./stylix.nix pkgs;
