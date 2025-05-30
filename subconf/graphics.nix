@@ -19,13 +19,15 @@
   hardware.nvidia = {
     modesetting.enable = true;
     open = false;
-    nvidiaSettings = true;
-    nvidiaPersistenced = true;
     package = config.boot.kernelPackages.nvidiaPackages.latest;
+    powerManagement = {
+      enable = true;
+      finegrained = true;
+    };
     prime = {
       intelBusId = "PCI:0:2:0";
       nvidiaBusId = "PCI:22:0:0";
-      sync.enable = true;
+      offload.enable = true;
       allowExternalGpu = true;
     };
   };
