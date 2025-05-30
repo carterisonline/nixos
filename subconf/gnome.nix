@@ -2,7 +2,7 @@
 
 let
   nautilus-with-gst-extras = pkgs.nautilus.overrideAttrs (final: prev: {
-    buildInputs = prev.buildInputs ++ (with pkgs.gst-all-1; [ gst-libav gst-plugins-good gst-plugins-bad gst-plugins-ugly gst-plugins-rs ]);
+    buildInputs = prev.buildInputs ++ (with pkgs.gst_all_1; [ gst-libav gst-plugins-good gst-plugins-bad gst-plugins-ugly gst-plugins-rs ]);
   });
 in
 {
