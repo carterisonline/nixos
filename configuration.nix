@@ -12,6 +12,7 @@
       ./subconf/networking.nix
       ./subconf/plymouth.nix
       ./subconf/security.nix
+      ./subconf/virtualization.nix
     ];
 
   hardware.bluetooth.enable = true;
@@ -23,8 +24,6 @@
     enableGraphical  = true;
   };
 
-  virtualisation.libvirtd.enable = true;
-  virtualisation.virtualbox.host.enable = true;
   time.timeZone = "America/New_York";
 
   services.printing.enable = true;
@@ -153,11 +152,6 @@
   };
 
   programs.wireshark.enable = true;
-
-  virtualisation.docker = {
-    enable = true;
-    enableOnBoot = false;
-  };
 
   stylix = import ./stylix.nix pkgs;
 }
