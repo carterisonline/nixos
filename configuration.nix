@@ -11,6 +11,7 @@
       ./subconf/graphics.nix
       ./subconf/networking.nix
       ./subconf/plymouth.nix
+      ./subconf/security.nix
     ];
 
   hardware.bluetooth.enable = true;
@@ -21,19 +22,10 @@
     enable = true;
     enableGraphical  = true;
   };
-  # Only write to the disk every 60s
-  fileSystems."/".options = [ "commit=60" ];
 
   virtualisation.libvirtd.enable = true;
   virtualisation.virtualbox.host.enable = true;
   time.timeZone = "America/New_York";
-
-  users.users.carter = {
-    isNormalUser = true;
-    home = "/home/carter";
-    description = "Carter Reeb";
-    extraGroups = [ "audio" "docker" "libvirtd" "wheel" "vboxusers" "wireshark" ];
-  };
 
   services.printing.enable = true;
   services.libinput.enable = true;
@@ -56,14 +48,6 @@
         nice = -20;
       }
     ];
-  };
-
-  services.udev = {
-    enable = true;
-    # prefer Nvidia card on Mutter
-    extraRules = ''
-      ENV{ID_PATH}=="pci-0000:22:00.0", TAG+="mutter-device-preferred-primary"
-    '';
   };
 
   environment.systemPackages = with pkgs; [    
