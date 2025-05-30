@@ -3,16 +3,10 @@
 {
   environment.systemPackages = with pkgs; [
     authenticator
-    commit
-    eartag
-    elastic
     errands
     eyedropper
-    junction
     metadata-cleaner
     mission-center
-    vaults
-    wike
   ];
   environment.gnome.excludePackages = with pkgs; [
     atomix
