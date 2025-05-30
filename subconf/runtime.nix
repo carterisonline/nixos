@@ -1,6 +1,8 @@
 { pkgs, ... }:
 
 {
+  # if this sets my max frequency to 3.8Mhz. I am screwed
+  powerManagement.cpufreq.max = 3800000;
   services.ananicy = {
     enable = true;
     package = pkgs.ananicy-cpp;
