@@ -15,19 +15,8 @@
       ./subconf/virtualization.nix
     ];
 
-  hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = true;
-  hardware.bluetooth.input.General.ClassicBondedOnly = false;
-
-  hardware.logitech.wireless = {
-    enable = true;
-    enableGraphical  = true;
-  };
-
   time.timeZone = "America/New_York";
 
-  services.printing.enable = true;
-  services.libinput.enable = true;
   services.flatpak.enable = true;
 
   services.ananicy = {
@@ -150,8 +139,6 @@
       };
     };
   };
-
-  programs.wireshark.enable = true;
 
   stylix = import ./stylix.nix pkgs;
 }
