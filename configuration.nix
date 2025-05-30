@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports =
@@ -17,8 +17,6 @@
     ];
 
   time.timeZone = "America/New_York";
-
-  services.flatpak.enable = true;
 
   # System Packages should be the minimal set of programs which helps users
   # manage their system, diagnose issues, and get most things done.
@@ -93,9 +91,9 @@
 
   programs.nix-ld.enable = true;
 
-  programs.steam = {
-    enable = true;
-  };
+  programs.steam.enable = true;
+
+  services.flatpak.enable = true;
 
   stylix = import ./stylix.nix pkgs;
 }

@@ -8,14 +8,9 @@
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
-    
-    # Disable watchdog. Re-enable this if you get panics
-    # kernelParams = [ "nmi_watchdog=0" ];
 
     kernel.sysctl = {
       "kernel.sysrq" = 1;
-      # Only write to the disk every 60s
-      # "vm.dirty_writeback_centisecs" = 6000;
     };
     
     supportedFilesystems = [ "bcachefs" ];
@@ -33,8 +28,4 @@
 
     binfmt.emulatedSystems = [ "aarch64-linux" ];
   };
-
-  # systemd.services = {
-  #   NetworkManager-wait-online.enable = false;
-  # };
 }

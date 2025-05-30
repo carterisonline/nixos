@@ -18,18 +18,13 @@
   };
   hardware.nvidia = {
     modesetting.enable = true;
-    # powerManagement.enable = true;
     open = false;
     nvidiaSettings = true;
     nvidiaPersistenced = true;
-    # package = config.boot.kernelPackages.nvidiaPackages.production;
     package = config.boot.kernelPackages.nvidiaPackages.latest;
     prime = {
       intelBusId = "PCI:0:2:0";
       nvidiaBusId = "PCI:22:0:0";
-
-      # consider testing against sync and offload modes. how does this work in wayland on mutter?
-      # reverseSync.enable = true;
       sync.enable = true;
       allowExternalGpu = true;
     };

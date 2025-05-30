@@ -1,4 +1,4 @@
-{ pkgs, musnix, ... }:
+{ ... }:
 
 {
   hardware.pulseaudio.enable = false;
