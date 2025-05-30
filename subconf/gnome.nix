@@ -34,6 +34,8 @@
     totem
   ];
   programs.dconf.enable = true;
+  # prefer Nvidia card on Mutter
+  services.udev.extraRules = ''ENV{ID_PATH}=="pci-0000:22:00.0", TAG+="mutter-device-preferred-primary"'';
   services.xserver = {
     enable = true;
     displayManager.gdm.enable = true;
