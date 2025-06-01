@@ -29,7 +29,6 @@
       android-tools
       auto-patchelf
       bespokesynth
-      cardinal
       comma
       easyeffects
       furnace
@@ -47,7 +46,6 @@
       obsidian
       patchelf
       renderdoc
-      rnnoise-plugin
       rpcs3
       scrcpy
       strawberry
