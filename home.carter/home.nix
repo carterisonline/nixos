@@ -47,6 +47,7 @@
       obsidian
       patchelf
       renderdoc
+      rnnoise-plugin
       rpcs3
       scrcpy
       strawberry
