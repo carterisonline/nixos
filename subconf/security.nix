@@ -5,7 +5,7 @@
     isNormalUser = true;
     home = "/home/carter";
     description = "Carter Reeb";
-    extraGroups = [ "audio" "docker" "libvirtd" "wheel" "vboxusers" ];
+    extraGroups = [ "audio" "cdrom" "docker" "libvirtd" "wheel" "vboxusers" ];
   };
 
   security = {

@@ -22,4 +22,9 @@
   services.libinput.enable = true;
   services.printing.enable = true;
   services.tailscale.enable = true;
+
+  programs.cdemu = {
+    enable = true;
+    gui = true;
+  };
 }
