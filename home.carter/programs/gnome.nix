@@ -11,6 +11,7 @@ let
     gsconnect
     solaar-extension
     steal-my-focus-window
+    tray-icons-reloaded
     vitals
   ];
 in
