@@ -34,7 +34,6 @@
       furnace
       frida-tools
       gale
-      gamemode
       gocryptfs
       godot_4-mono
       helvum

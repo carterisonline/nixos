@@ -50,6 +50,7 @@
     nmap
 
     # Multimedia
+    gamemode
     mpv
 
     # Multiplatform
