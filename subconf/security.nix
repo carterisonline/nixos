@@ -1,6 +1,7 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
+  hardware.bluetooth.input.General.ClassicBondedOnly = (builtins.compareVersions pkgs.bluez.version "5.83") != -1;
   users.users.carter = {
     isNormalUser = true;
     home = "/home/carter";
