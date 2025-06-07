@@ -31,7 +31,7 @@
                 
           set __cnf_resolved (rg "^$argv[1]:" ~/.cache/cnf-resolved 2>/dev/null)
           if test $status -eq 0
-            set __cnf_resolved_pkg (echo $__cnf_resolved | sd '^.*:(\w+)$' '$1')
+            set __cnf_resolved_pkg (echo $__cnf_resolved | sd '^.*:([^:]+)$' '$1')
             __cnf_run $__cnf_resolved_pkg $argv[1] "$argv[2..-1]"
             return $status
           else if nix derivation show "nixpkgs#$argv[1]" >/dev/null 2>/dev/null
