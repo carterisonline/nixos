@@ -9,6 +9,7 @@ let
     dash-to-dock
     gpu-profile-selector
     gsconnect
+    paperwm
     solaar-extension
     steal-my-focus-window
     tray-icons-reloaded
@@ -121,6 +122,31 @@ in
         extend-height = true;
         running-indicator-style = "DOTS";
         transparency-mode = "FIXED";
+      };
+
+      "org/gnome/shell/extensions/paperwm/keybindings" = {
+        move-up-workspace = [ "<Shift><Super>w" ];
+        move-down-workspace = [ "<Shift><Super>s" ];
+        move-left = [ "<Shift><Super>a" ];
+        move-right = [ "<Shift><Super>d" ];
+        move-monitor-above = [ "<Shift><Control><Super>w" ];
+        move-monitor-below = [ "<Shift><Control><Super>s" ];
+        move-monitor-left = [ "<Shift><Control><Super>a" ];
+        move-monitor-right = [ "<Shift><Control><Super>d" ];
+        switch-up-workspace = [ "<Super>w" ];
+        switch-down-workspace = [ "<Super>s" ];
+        switch-next = [ "<Super>d" ];
+        switch-previous = [ "<Super>a" ];
+        switch-monitor-above = [ "<Control><Super>w" ];
+        switch-monitor-below = [ "<Control><Super>s" ];
+        switch-monitor-left = [ "<Control><Super>a" ];
+        switch-monitor-right = [ "<Control><Super>d" ];       
+        switch-global-up = [ "" ];
+        switch-global-down = [ "" ];
+        switch-global-left = [ "" ];
+        switch-global-right = [ "" ];
+        switch-focus-mode = [ "" ];
+        switch-open-window-position = [ "" ];
       };
 
       "org/gnome/shell/extensions/vitals" = {
