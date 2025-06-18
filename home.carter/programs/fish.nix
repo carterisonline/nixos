@@ -145,6 +145,7 @@
       rt-gl-intel = "nixGLIntel nix-alien -f";
       rt-vk-intel = "nixVulkanIntel nix-alien -f";
       nixos-rebuild-nonfree = "sudo bash -c 'export NIXPKGS_ALLOW_UNFREE=1 && nixos-rebuild switch --impure -L'";
+      killwine = "ps -A | rg '\.exe|wine' | cut -d\\  -f 3 | xargs kill -9";
     };
   };
 }
