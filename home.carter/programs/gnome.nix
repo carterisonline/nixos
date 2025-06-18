@@ -124,6 +124,29 @@ in
         transparency-mode = "FIXED";
       };
 
+      "org/gnome/shell/extensions/paperwm" = {
+        default-focus-mode = 2; # edge focusing
+        disable-topbar-styling = true;
+        horizontal-margin = 0;
+        open-window-position = 0; # open new windows to the right
+        open-window-position-option-down = false;
+        selection-border-radius-top = 0;
+        selection-border-size = 0;
+        show-window-position-bar = false;
+        show-workspace-indicator = false;
+        use-default-background = true;
+        vertical-margin = 0;
+        vertical-margin-bottom = 0;
+        window-gap = 4;
+        winprops = builtins.map builtins.toJSON [
+          # avoid tiling plugin menus and dialogs
+          {
+            wm_class = "yabridge-host.exe";
+            scratch_layer = true;
+          }
+        ];
+      };
+
       "org/gnome/shell/extensions/paperwm/keybindings" = {
         move-up-workspace = [ "<Shift><Super>w" ];
         move-down-workspace = [ "<Shift><Super>s" ];
