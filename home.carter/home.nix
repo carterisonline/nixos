@@ -116,12 +116,15 @@
   programs.obs-studio = {
     enable = true;
     plugins = with pkgs.obs-studio-plugins; [
+      advanced-scene-switcher
+      obs-advanced-masks
+      obs-backgroundremoval
       obs-composite-blur
       obs-pipewire-audio-capture
       obs-shaderfilter
+      obs-transition-table
       obs-tuna
       obs-vkcapture
-      wlrobs
     ];
   };
 
