@@ -29,4 +29,8 @@
   };
   hardware.nvidia-container-toolkit.enable = true;
   services.xserver.videoDrivers = [ "nvidia" "modesetting" "fbdev" "i915" ];
+  services.lsfg-vk = {
+    enable = true;
+    ui.enable = true;
+  };
 }

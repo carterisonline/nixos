@@ -17,9 +17,11 @@
     nix-search-cli.inputs.nixpkgs.follows = "nixpkgs";
     isd.url = "github:isd-project/isd";
     isd.inputs.nixpkgs.follows = "nixpkgs";
+    lsfg-vk-flake.url = "github:pabloaul/lsfg-vk-flake/main";
+    lsfg-vk-flake.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nixpkgs, nixpkgs-unstable, bitwig-studio, stylix, home-manager, nix-flatpak, nix-alien, nixGL, umu, nix-search-cli, isd, ... }@attrs:
+  outputs = { nixpkgs, nixpkgs-unstable, bitwig-studio, stylix, home-manager, nix-flatpak, nix-alien, nixGL, umu, nix-search-cli, isd, lsfg-vk-flake, ... }@attrs:
   let
     system = "x86_64-linux";
     pkgUse = x: { environment.systemPackages = x; };
@@ -68,6 +70,8 @@
             users.carter = import ./home.carter/home.nix;
           };
         }
+
+        lsfg-vk-flake.nixosModules.default
 
         {
           system.stateVersion = "24.05"; # DO NOT CHANGE OR REMOVE
