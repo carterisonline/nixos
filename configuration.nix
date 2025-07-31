@@ -25,7 +25,7 @@
     git wget ripgrep fd fzf sd parallel-disk-usage
 
     # Documentation
-    linux-manual man-pages man-pages-posix
+    man-pages man-pages-posix
 
     # Document Management
     helix
