@@ -94,7 +94,7 @@
         echo "$(pkgpath $argv[1])/share"
       '';
       pkgwith = ''
-        nix-locate -w --top-level --at-root --minimal $argv[1]
+        nix-locate -w --at-root --minimal $argv[1]
       '';
       libwith = ''
         pkgwith "/lib/$argv[1]"
