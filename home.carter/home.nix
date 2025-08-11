@@ -20,6 +20,7 @@
     packages = with pkgs; [ 
       android-tools
       auto-patchelf
+      btop-cuda
       chatterino7
       comma
       easyeffects
@@ -27,11 +28,15 @@
       gocryptfs
       imhex
       jetbrains.idea-community-bin
+      kdePackages.okular
+      krita
       lsp-plugins
       nodePackages.vscode-json-languageserver
       obsidian
       parabolic
       patchelf
+      prismlauncher
+      qpwgraph
       scrcpy
    ];
   
