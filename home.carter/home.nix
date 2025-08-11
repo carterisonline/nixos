@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, osConfig, ... }:
 
 {
   imports = [
@@ -28,7 +28,6 @@
       imhex
       jetbrains.idea-community-bin
       lsp-plugins
-      lutris
       nodePackages.vscode-json-languageserver
       obsidian
       parabolic
@@ -90,6 +89,33 @@
     input_delay 1
     sync_to_monitor no
     '';
+  };
+
+  programs.lutris = {
+    enable = true;
+    protonPackages = [ pkgs.proton-ge-bin ];
+    runners.linux.settings.system = {
+      disable_runtime = true;
+      prefix_command = "${pkgs.steam-run}/bin/steam-run";
+    };
+    runners.wine = {
+      package = pkgs.proton-ge-bin;
+      settings = {
+        system = {
+          env = {
+            DXVK_CONFIG = "d3d11.cachedDynamicResources=a";
+          };
+          prefix_command = "env -u DISPLAY";
+        };
+        runner = {
+          battleye = false;
+          eac = false;
+          esync = false;
+          fsr = false;
+        };
+      };
+    };
+    steamPackage = osConfig.programs.steam.package;
   };
 
   programs.readline = {
