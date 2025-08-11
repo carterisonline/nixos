@@ -14,42 +14,26 @@
   
   home = {
     file."/home/carter/.gtkrc-2.0".force = true;
-    file."/home/carter/.config/kdeconnect/config" = {
-      force = true;
-      text = ''
-        [General]
-        name=NixOS
-        customDevices=100.112.114.61
-      '';
-    };
 
     sessionVariables.NIXPKGS_ALLOW_UNFREE = 1;
   
     packages = with pkgs; [ 
       android-tools
       auto-patchelf
-      bespokesynth
+      chatterino7
       comma
       easyeffects
-      furnace
-      frida-tools
-      gale
+      gimp3-with-plugins
       gocryptfs
-      godot_4-mono
-      helvum
       imhex
       jetbrains.idea-community-bin
       lsp-plugins
       lutris
       nodePackages.vscode-json-languageserver
       obsidian
+      parabolic
       patchelf
-      renderdoc
-      rpcs3
       scrcpy
-      strawberry
-      vital
-      zynaddsubfx
    ];
   
     username = "carter";
@@ -65,12 +49,7 @@
       location = "https://dl.flathub.org/repo/flathub.flatpakrepo";
     }];
     packages = [
-      "com.chatterino.chatterino"
-      "org.gimp.GIMP"
       "org.kde.kdenlive"
-      "org.nickvision.tubeconverter"
-      "org.prismlauncher.PrismLauncher"
-      "net.mkiol.SpeechNote"
       "com.discordapp.Discord"
     ];
   };
@@ -111,22 +90,6 @@
     input_delay 1
     sync_to_monitor no
     '';
-  };
-
-  programs.obs-studio = {
-    enable = true;
-    package = pkgs.obs-studio.override { cudaSupport = true; };
-    plugins = with pkgs.obs-studio-plugins; [
-      advanced-scene-switcher
-      obs-advanced-masks
-      obs-backgroundremoval
-      obs-composite-blur
-      obs-pipewire-audio-capture
-      obs-shaderfilter
-      obs-transition-table
-      obs-tuna
-      obs-vkcapture
-    ];
   };
 
   programs.readline = {
