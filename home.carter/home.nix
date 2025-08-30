@@ -24,6 +24,7 @@
       chatterino7
       comma
       easyeffects
+      ff2mpv-rust
       gimp3-with-plugins
       gocryptfs
       imhex
