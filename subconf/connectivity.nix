@@ -9,6 +9,8 @@
     enableGraphical = true;
   };
 
+  hardware.steam-hardware.enable = true;
+
   networking = {
     hostName = "nixos";
     networkmanager = {
