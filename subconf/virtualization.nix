@@ -4,9 +4,10 @@
     virtualisation = {
       libvirtd.enable = true;
       virtualbox.host.enable = true;
-      docker = {
+      podman = {
         enable = true;
-        enableOnBoot = false;  
+        dockerCompat = true;
+        dockerSocket.enable = true;
       };
-    };
+    };      
 }
