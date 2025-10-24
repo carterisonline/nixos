@@ -24,6 +24,7 @@
   services.libinput.enable = true;
   services.printing.enable = true;
   services.tailscale.enable = true;
+  services.usbmuxd.enable = true;
 
   programs.cdemu = {
     enable = true;
