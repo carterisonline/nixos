@@ -44,6 +44,7 @@
     usbutils
     ## I/O Management
     inotify-tools
+    usbmuxd
     v4l-utils
     wayland-utils
     ## Network
