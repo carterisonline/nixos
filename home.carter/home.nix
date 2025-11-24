@@ -23,10 +23,12 @@
       btop-cuda
       chatterino7
       comma
+      doomrunner
       easyeffects
       ff2mpv-rust
       gimp3-with-plugins
       gocryptfs
+      gzdoom
       imhex
       jetbrains.idea-community-bin
       kdePackages.okular
