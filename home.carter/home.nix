@@ -28,6 +28,7 @@
       ff2mpv-rust
       gimp3-with-plugins
       gocryptfs
+      goofcord
       gzdoom
       imhex
       jetbrains.idea-community-bin
@@ -57,8 +58,7 @@
     }];
     packages = [
       "org.kde.kdenlive"
-      "com.discordapp.Discord"
-    ];
+     ];
   };
 
   programs.direnv = {
