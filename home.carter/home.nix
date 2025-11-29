@@ -42,6 +42,7 @@
       prismlauncher
       qpwgraph
       scrcpy
+      retroarch
    ];
   
     username = "carter";
