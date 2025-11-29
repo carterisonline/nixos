@@ -25,7 +25,6 @@
       comma
       doomrunner
       easyeffects
-      emulationstation-de
       ff2mpv-rust
       gimp3-with-plugins
       gocryptfs
