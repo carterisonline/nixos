@@ -81,6 +81,14 @@
 
         nsh $pkgs
       '';
+      nshxu = ''
+        set pkgs
+        for a in $argv
+          set pkgs $pkgs "github:nixos/nixpkgs/nixpkgs-unstable#$a"
+        end
+
+        nsh $pkgs
+      '';
       pkgpath = ''
         nix eval --raw "nixpkgs#$argv[1].outPath"
       '';
