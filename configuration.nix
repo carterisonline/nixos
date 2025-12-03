@@ -36,7 +36,7 @@
     # Monitoring
     ## GPU
     clinfo
-    glxinfo
+    mesa-demos
     nvtopPackages.full
     vulkan-tools
     ## Hardware

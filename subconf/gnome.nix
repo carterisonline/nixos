@@ -44,17 +44,14 @@ in
   };
   # prefer Nvidia card on Mutter
   services.udev.extraRules = ''ENV{ID_PATH}=="pci-0000:22:00.0", TAG+="mutter-device-preferred-primary"'';
-  services.xserver = {
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome = {
     enable = true;
-    displayManager.gdm.enable = true;
-    desktopManager.gnome = {
-      enable = true;
-      extraGSettingsOverridePackages = [pkgs.mutter];
-      # I'm not 100% sure what kms-modifiers does but apparently it fixes some issues with Nvidia drivers
-      extraGSettingsOverrides = ''
-        [org.gnome.mutter]
-        experimental-features=['variable-refresh-rate', 'scale-monitor-framebuffer', 'kms-modifiers']
-      '';
-    };
+    extraGSettingsOverridePackages = [pkgs.mutter];
+    # I'm not 100% sure what kms-modifiers does but apparently it fixes some issues with Nvidia drivers
+    extraGSettingsOverrides = ''
+      [org.gnome.mutter]
+      experimental-features=['variable-refresh-rate', 'scale-monitor-framebuffer', 'kms-modifiers']
+    '';
   };
 }

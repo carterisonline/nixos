@@ -13,7 +13,7 @@
   };
   
   home = {
-    file."/home/carter/.gtkrc-2.0".force = true;
+    file."/home/carter/.gtkrc-2.0".force = lib.mkForce true;
 
     sessionVariables.NIXPKGS_ALLOW_UNFREE = 1;
   
@@ -68,8 +68,10 @@
 
   programs.git = {
     enable = true;
-    userName = "Carter Reeb";
-    userEmail = "me@carteris.online";
+    settings.user = {
+      name = "Carter Reeb";
+      email = "me@carteris.online";
+    };
   };
 
   programs.helix = {
@@ -101,13 +103,13 @@
 
   programs.lutris = {
     enable = true;
+    defaultWinePackage = pkgs.proton-ge-bin;
     protonPackages = [ pkgs.proton-ge-bin ];
     runners.linux.settings.system = {
       disable_runtime = true;
       prefix_command = "${pkgs.steam-run}/bin/steam-run";
     };
     runners.wine = {
-      package = pkgs.proton-ge-bin;
       settings = {
         system = {
           env = {

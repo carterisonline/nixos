@@ -1,18 +1,16 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     bitwig-studio.url = "github:NixOS/nixpkgs/05bbf675397d5366259409139039af8077d695ce";
-    stylix.url = "github:danth/stylix/release-25.05";
-    home-manager.url = "github:nix-community/home-manager/release-25.05";
+    stylix.url = "github:danth/stylix/release-25.11";
+    home-manager.url = "github:nix-community/home-manager/release-25.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.6.0";
     nix-alien.url = "github:thiagokokada/nix-alien";
     nix-alien.inputs.nixpkgs.follows = "nixpkgs";
     nixGL.url = "github:guibou/nixGL";
     nixGL.inputs.nixpkgs.follows = "nixpkgs";
-    umu.url = "github:Open-Wine-Components/umu-launcher?dir=packaging/nix";
-    umu.inputs.nixpkgs.follows = "nixpkgs";
     nix-search-cli.url = "github:peterldowns/nix-search-cli";
     nix-search-cli.inputs.nixpkgs.follows = "nixpkgs";
     isd.url = "github:isd-project/isd";
@@ -21,7 +19,7 @@
     lsfg-vk-flake.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nixpkgs, nixpkgs-unstable, bitwig-studio, stylix, home-manager, nix-flatpak, nix-alien, nixGL, umu, nix-search-cli, isd, lsfg-vk-flake, ... }@attrs:
+  outputs = { nixpkgs, nixpkgs-unstable, bitwig-studio, stylix, home-manager, nix-flatpak, nix-alien, nixGL, nix-search-cli, isd, lsfg-vk-flake, ... }@attrs:
   let
     system = "x86_64-linux";
     pkgUse = x: { environment.systemPackages = x; };
@@ -34,10 +32,6 @@
         (final: prev: builtins.listToAttrs (map (y: { name = y; value = repo.legacyPackages.${system}.${y};}) x))
       ];
     });
-
-    umux = umu.packages.${system}.umu-launcher.override {
-      withTruststore = true;
-    };
   in
    {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
@@ -49,7 +43,6 @@
         ./settings.nix
         ./configuration.nix
         
-        (pkgUse [ umux ])
         (pkgImport ./packages/prologue-sound-theme/default.nix {})
         (pkgImport ./packages/diagnose/default.nix {})
         (pkgFromFlake nix-alien)
