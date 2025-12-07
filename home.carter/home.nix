@@ -137,6 +137,26 @@
       "\\C-\\M-\\d" = "kill-line";
     };
   };
+
+  programs.retroarch = {
+    enable = true;
+    cores = {
+      beetle-psx.enable = true;
+      beetle-saturn.enable = true;
+      bsnes.enable = true;
+      citra.enable = true;
+      dolphin.enable = true;
+      flycast.enable = true;
+      genesis-plus-gx.enable = true;
+      melonds.enable = true;
+      mgba.enable = true;
+      mupen64plus.enable = true;
+      nestopia.enable = true;
+      pcsx2.enable = true;
+      ppsspp.enable = true;
+      sameboy.enable = true;
+    };
+  };
   
   programs.tealdeer = {
     enable = true;
