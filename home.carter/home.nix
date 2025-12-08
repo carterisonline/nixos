@@ -143,7 +143,6 @@
     cores = {
       beetle-psx.enable = true;
       beetle-saturn.enable = true;
-      bsnes.enable = true;
       citra.enable = true;
       dolphin.enable = true;
       flycast.enable = true;
@@ -155,6 +154,7 @@
       pcsx2.enable = true;
       ppsspp.enable = true;
       sameboy.enable = true;
+      snes9x.enable = true;
     };
   };
   
