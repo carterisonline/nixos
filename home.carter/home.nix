@@ -32,6 +32,7 @@
       gzdoom
       imhex
       jetbrains.idea-community-bin
+      kdePackages.ark
       kdePackages.okular
       krita
       lsp-plugins
