@@ -9,6 +9,12 @@
     extraGroups = [ "audio" "cdrom" "libvirtd" "podman" "wheel" "vboxusers" ];
   };
 
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+    pinentryPackage = pkgs.pinentry-gnome3;
+  };
+
   security = {
     sudo.enable = false;
     sudo-rs = {
