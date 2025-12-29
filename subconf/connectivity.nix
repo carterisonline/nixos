@@ -26,6 +26,24 @@
   services.tailscale.enable = true;
   services.usbmuxd.enable = true;
 
+  services.tor = {
+    enable = true;
+    client.enable = true;
+    enableGeoIP = true;
+    settings = {
+      AutomapHostsOnResolve = true;
+      AutomapHostsSuffixes = [ ".exit" ".onion" ];
+      DNSPort = 9053;
+      ExcludeExitNodes = "{de},{fr}";
+      ExcludeNodes = "{de},{fr}";
+      Log = "notice syslog";
+      SafeLogging = 1;
+      Sandbox = true;
+      SocksPort = [ "9060" ];
+      StrictNodes = true;
+    };
+  };
+
   programs.cdemu = {
     enable = true;
     gui = true;
