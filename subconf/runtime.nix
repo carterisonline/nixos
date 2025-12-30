@@ -1,5 +1,8 @@
 { pkgs, ... }:
 
+let
+  tuned-profiles = pkgs.callPackage ../packages/tuned-profiles/default.nix {};
+in
 {
   # if this sets my max frequency to 3.8Mhz. I am screwed
   powerManagement.cpufreq.max = 3800000;
@@ -24,5 +27,38 @@
   services.scx = {
     enable = true;
     scheduler = "scx_lavd";
+  };
+  services.power-profiles-daemon.enable = false;
+  services.tuned = {
+    enable = true;
+    settings = {
+      profile_dirs = "/etc/tuned/profiles,${tuned-profiles}";
+    };
+    ppdSupport = true;
+    ppdSettings.profiles = {
+      balanced = "balanced";
+      performance = "performance";
+      power-saver = "powersave";
+    };
+    profiles = {
+      powersave = {
+        script = {
+          type = "script";
+          script = "${tuned-profiles}/bin/tuned-powersave";
+        };
+      };
+      balanced = {
+        script = {
+          type = "script";
+          script = "${tuned-profiles}/bin/tuned-balanced";
+        };
+      };
+      performance = {
+        script = {
+          type = "script";
+          script = "${tuned-profiles}/bin/tuned-performance";
+        };
+      };
+    };
   };
 }

@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+function start() {
+  systemctl set-environment SCX_FLAGS_OVERRIDE=--performance
+  systemctl restart scx.service
+  return 0
+}
+
+function stop() {
+  return 0
+}
+
+case $1 in
+start)
+  start;;
+stop)
+  stop;;
+esac
