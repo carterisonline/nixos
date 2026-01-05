@@ -71,7 +71,7 @@
       };
       "remote.SSH.useLocalServer" = false;
       "remote.SSH.remotePlatform" = {
-        "10.20.108.21" = "linux";
+        "10.20.108.29" = "linux";
       };
       "rust-analyzer.completion.termSearch.enable" = true;
       "rust-analyzer.imports.granularity.group" = "module";
