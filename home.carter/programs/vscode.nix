@@ -26,6 +26,10 @@
           command = "editor.action.quickFix";
         }
         {
+          key = "alt+q";
+          command = "editor.action.autoFix";
+        }
+        {
           key = "numpad_add";
           command = "editor.action.revealDefinition";
           when = "editorHasDefinitionProvider && editorTextFocus";
