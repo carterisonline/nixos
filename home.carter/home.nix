@@ -129,6 +129,10 @@
     steamPackage = osConfig.programs.steam.package;
   };
 
+  programs.mangohud = {
+    enable = true;
+  };
+
   programs.readline = {
     enable = true;
     bindings = {
