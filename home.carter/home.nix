@@ -14,7 +14,6 @@
   
   home = {
     file."/home/carter/.gtkrc-2.0".force = lib.mkForce true;
-    file."/home/carter/.config/mimeapps.list".force = lib.mkForce true;
 
     sessionVariables.NIXPKGS_ALLOW_UNFREE = 1;
   
@@ -128,10 +127,6 @@
       };
     };
     steamPackage = osConfig.programs.steam.package;
-  };
-
-  programs.mangohud = {
-    enable = true;
   };
 
   programs.readline = {
