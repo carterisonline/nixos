@@ -21,6 +21,7 @@
       android-tools
       auto-patchelf
       btop-cuda
+      calf
       chatterino7
       comma
       doomrunner
