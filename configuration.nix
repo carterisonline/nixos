@@ -51,7 +51,6 @@
 
     # Multimedia
     gamemode
-    mpv
 
     # Multiplatform
     winetricks

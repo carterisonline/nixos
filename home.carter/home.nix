@@ -130,6 +130,23 @@
     steamPackage = osConfig.programs.steam.package;
   };
 
+  programs.mpv = {
+    enable = true;
+    config = {
+      vo = "gpu-next";
+      hwdec = "auto";
+      ytdl = "yes";
+      ytdl-raw-options = "format-sort=vcodec:h264";
+    };
+    scripts = with pkgs.mpvScripts; [
+      uosc # gui
+      mpris # global play/pause/progress
+      reload # reload on unreliable connections/streams
+      thumbfast # fast thumbnail previews
+      visualizer # audio visualizers
+    ];
+  };
+
   programs.readline = {
     enable = true;
     bindings = {
