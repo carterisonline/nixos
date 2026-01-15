@@ -145,6 +145,14 @@
       thumbfast # fast thumbnail previews
       visualizer # audio visualizers
     ];
+    scriptOpts = {
+      uosc = {
+        disable_elements = "audio_indicator";
+      };
+      visualizer = {
+        quality = "veryhigh";
+      };
+    };
   };
 
   programs.readline = {
