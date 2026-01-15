@@ -150,6 +150,7 @@
         disable_elements = "audio_indicator";
       };
       visualizer = {
+        height = "9";
         quality = "veryhigh";
       };
     };
