@@ -44,6 +44,7 @@
       qpwgraph
       scrcpy
       xarchiver
+      youtube-music # soon renamed to pear-desktop
    ];
   
     username = "carter";
