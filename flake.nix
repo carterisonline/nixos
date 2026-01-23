@@ -17,9 +17,11 @@
     isd.inputs.nixpkgs.follows = "nixpkgs";
     lsfg-vk-flake.url = "github:pabloaul/lsfg-vk-flake/main";
     lsfg-vk-flake.inputs.nixpkgs.follows = "nixpkgs";
+    millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
+    millennium.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nixpkgs, nixpkgs-unstable, bitwig-studio, stylix, home-manager, nix-flatpak, nix-alien, nixGL, nix-search-cli, isd, lsfg-vk-flake, ... }@attrs:
+  outputs = { nixpkgs, nixpkgs-unstable, bitwig-studio, stylix, home-manager, nix-flatpak, nix-alien, nixGL, nix-search-cli, isd, lsfg-vk-flake, millennium, ... }@attrs:
   let
     system = "x86_64-linux";
     pkgUse = x: { environment.systemPackages = x; };
@@ -42,6 +44,14 @@
         (pkgOverlay [ "fish" ] nixpkgs-unstable)
         ./settings.nix
         ./configuration.nix
+
+        ({pkgs, ...}: {
+          nixpkgs.overlays = [ millennium.overlays.default ];
+          programs.steam = {
+            enable = true;
+            package = pkgs.millennium-steam;
+          };
+        })
         
         (pkgImport ./packages/prologue-sound-theme/default.nix {})
         (pkgImport ./packages/diagnose/default.nix {})
