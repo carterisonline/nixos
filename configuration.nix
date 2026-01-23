@@ -83,6 +83,8 @@
 
   programs.nix-ld.enable = true;
 
+  programs.steam.enable = true;
+
   services.flatpak.enable = true;
 
   stylix = import ./stylix.nix pkgs;
