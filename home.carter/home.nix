@@ -41,6 +41,7 @@
       parabolic
       patchelf
       prismlauncher
+      protontricks
       qpwgraph
       scrcpy
       xarchiver
