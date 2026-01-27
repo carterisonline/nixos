@@ -19,6 +19,7 @@
   
     packages = with pkgs; [ 
       android-tools
+      appimage-run
       auto-patchelf
       btop-cuda
       calf
