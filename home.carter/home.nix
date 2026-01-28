@@ -8,8 +8,6 @@
     ./programs/vscode.nix
   ];
 
-  fonts.fontconfig.defaultFonts.emoji = [ pkgs.joypixels ];
-
   stylix = ( import ../stylix.nix pkgs ) // {
     targets.vscode.enable = false;
   };

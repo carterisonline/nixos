@@ -25,5 +25,6 @@ mkCaches {
     permittedInsecurePackages = [
       "dotnet-sdk-6.0.428"
     ];
+    joypixels.acceptLicense = true;
   };
 }

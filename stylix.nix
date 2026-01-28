@@ -7,11 +7,17 @@ pkgs:
   cursor.name = "Simp1e-Adw-Dark";
   cursor.package = pkgs.simp1e-cursors;
   cursor.size = 24;
-  fonts = {
+  fonts = with pkgs; {
+    emoji.name = "JoyPixels";
+    emoji.package = joypixels;
+    
     sansSerif.name = "Inter";
-    sansSerif.package = pkgs.inter;
+    sansSerif.package = inter;
+
+    serif.name = "Libre Baskerville";
+    serif.package = libre-baskerville;
 
     monospace.name = "JetBrains Mono";
-    monospace.package = pkgs.jetbrains-mono;
+    monospace.package = jetbrains-mono;
   };
 }
