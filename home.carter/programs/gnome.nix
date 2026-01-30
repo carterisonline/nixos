@@ -69,11 +69,6 @@ in
         edge-tiling = true;
       };
 
-      "org/gnome/mutter/wayland" = {
-        # fixes some programs like gamescope and 86Box
-        xwayland-allow-grabs = true;
-      };
-
       "org/gnome/settings-daemon/plugins/power" = {
         idle-dim = false;
         sleep-inactive-ac-type = "nothing";
