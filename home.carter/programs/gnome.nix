@@ -4,6 +4,7 @@ let
   auto-screen-brightness = pkgs.callPackage ../../packages/gnomeExtensions.auto-screen-brightness/default.nix {};
   gnomeExtensions = with pkgs.gnomeExtensions; [
     advanced-alttab-window-switcher
+    appindicator
     auto-screen-brightness
     blur-my-shell
     dash-to-dock
@@ -101,6 +102,13 @@ in
           "com.bitwig.BitwigStudio.desktop"
           "org.gnome.Todo.desktop"
         ];
+      };
+
+      "org/gnome/shell/extensions/appindicator" = {
+        icon-opacity = 100;
+        icon-size = 20;
+        tray-pos = "left";
+        legacy-tray-enabled = true;
       };
 
       "org/gnome/shell/extensions/auto-screen-brightness" = {
