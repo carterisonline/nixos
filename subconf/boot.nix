@@ -26,8 +26,8 @@
       options nvidia NVreg_RemapLimit=510
     '';
 
-    hardware.cpu.intel.updateMicrocode = true;
-
     binfmt.emulatedSystems = [ "aarch64-linux" ];
   };
+
+  hardware.cpu.intel.updateMicrocode = true;
 }
