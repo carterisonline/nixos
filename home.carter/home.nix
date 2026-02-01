@@ -25,6 +25,7 @@
       calf
       chatterino7
       comma
+      dejavu_fonts
       doomrunner
       easyeffects
       ff2mpv-rust
