@@ -1,4 +1,7 @@
-{
+{ pkgs, ... }: {
+  environment.systemPackages = with pkgs; [
+    steam-devices-udev-rules
+  ];
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
