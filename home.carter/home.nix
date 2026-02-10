@@ -24,6 +24,7 @@
       btop-cuda
       calf
       cardinal
+      carla
       chatterino7
       comma
       dejavu_fonts
