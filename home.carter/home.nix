@@ -23,6 +23,7 @@
       auto-patchelf
       btop-cuda
       calf
+      cardinal
       chatterino7
       comma
       dejavu_fonts
@@ -45,8 +46,11 @@
       prismlauncher
       protontricks
       qpwgraph
+      rnnoise-plugin
       scrcpy
       xarchiver
+      yabridge
+      yabridgectl
       youtube-music # soon renamed to pear-desktop
    ];
   

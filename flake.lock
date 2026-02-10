@@ -68,22 +68,6 @@
         "type": "github"
       }
     },
-    "bitwig-studio": {
-      "locked": {
-        "lastModified": 1720494119,
-        "narHash": "sha256-IE7PZn9bSjxI4/MugjAEx49oPoxu0uKXdfC+X7HcRuQ=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "05bbf675397d5366259409139039af8077d695ce",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "05bbf675397d5366259409139039af8077d695ce",
-        "type": "github"
-      }
-    },
     "firefox-gnome-theme": {
       "flake": false,
       "locked": {
@@ -529,7 +513,6 @@
     },
     "root": {
       "inputs": {
-        "bitwig-studio": "bitwig-studio",
         "home-manager": "home-manager",
         "isd": "isd",
         "lsfg-vk-flake": "lsfg-vk-flake",

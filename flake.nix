@@ -2,7 +2,6 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
-    bitwig-studio.url = "github:NixOS/nixpkgs/05bbf675397d5366259409139039af8077d695ce";
     stylix.url = "github:danth/stylix/release-25.11";
     home-manager.url = "github:nix-community/home-manager/release-25.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -19,7 +18,7 @@
     lsfg-vk-flake.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nixpkgs, nixpkgs-unstable, bitwig-studio, stylix, home-manager, nix-flatpak, nix-alien, nixGL, nix-search-cli, isd, lsfg-vk-flake, ... }@attrs:
+  outputs = { nixpkgs, nixpkgs-unstable, stylix, home-manager, nix-flatpak, nix-alien, nixGL, nix-search-cli, isd, lsfg-vk-flake, ... }@attrs:
   let
     system = "x86_64-linux";
     pkgUse = x: { environment.systemPackages = x; };
@@ -45,11 +44,11 @@
         
         (pkgImport ./packages/prologue-sound-theme/default.nix {})
         (pkgImport ./packages/diagnose/default.nix {})
+        (pkgImport ./packages/bitwig-studio/default.nix {})
         (pkgFromFlake nix-alien)
         (pkgFromFlake nix-search-cli)
         (pkgFromFlake [ "nixGLIntel" "nixVulkanIntel" ] nixGL)
         (pkgFromFlake isd)
-        (pkgOverlay [ "bitwig-studio" "yabridge" "yabridgectl" "cardinal" "rnnoise-plugin" ] bitwig-studio)
         (pkgOverlay [ "archipelago" "dolphin-emu" "plugdata" "zed-editor" ] nixpkgs-unstable)
                 
         stylix.nixosModules.stylix
