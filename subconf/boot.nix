@@ -9,6 +9,8 @@
       efi.canTouchEfiVariables = true;
     };
 
+    kernelParams = [ "threadirqs" ];
+
     kernel.sysctl = {
       "kernel.sysrq" = 1;
     };
