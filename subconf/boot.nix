@@ -9,7 +9,7 @@
       efi.canTouchEfiVariables = true;
     };
 
-    kernelParams = [ "threadirqs" ];
+    kernelParams = [ "threadirqs" "preempt=full" ];
 
     kernel.sysctl = {
       "kernel.sysrq" = 1;
