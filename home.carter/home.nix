@@ -60,18 +60,6 @@
     stateVersion = "24.05";
   };
 
-  services.flatpak = {
-    enable = true;
-    uninstallUnmanaged = false;
-    remotes = lib.mkOptionDefault [{
-      name = "flathub";
-      location = "https://dl.flathub.org/repo/flathub.flatpakrepo";
-    }];
-    packages = [
-      "org.kde.kdenlive"
-     ];
-  };
-
   programs.direnv = {
     enable = true;
     nix-direnv.enable = true;
