@@ -5,20 +5,13 @@
     stylix.url = "github:danth/stylix/release-25.11";
     home-manager.url = "github:nix-community/home-manager/release-25.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.6.0";
     nix-alien.url = "github:thiagokokada/nix-alien";
     nix-alien.inputs.nixpkgs.follows = "nixpkgs";
-    nixGL.url = "github:guibou/nixGL";
-    nixGL.inputs.nixpkgs.follows = "nixpkgs";
-    nix-search-cli.url = "github:peterldowns/nix-search-cli";
-    nix-search-cli.inputs.nixpkgs.follows = "nixpkgs";
-    isd.url = "github:isd-project/isd";
-    isd.inputs.nixpkgs.follows = "nixpkgs";
     lsfg-vk-flake.url = "github:pabloaul/lsfg-vk-flake/main";
     lsfg-vk-flake.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nixpkgs, nixpkgs-unstable, stylix, home-manager, nix-flatpak, nix-alien, nixGL, nix-search-cli, isd, lsfg-vk-flake, ... }@attrs:
+  outputs = { nixpkgs, nixpkgs-unstable, stylix, home-manager, nix-alien, lsfg-vk-flake, ... }@attrs:
   let
     system = "x86_64-linux";
     pkgUse = x: { environment.systemPackages = x; };
@@ -46,19 +39,12 @@
         (pkgImport ./packages/diagnose/default.nix {})
         (pkgImport ./packages/bitwig-studio/default.nix {})
         (pkgFromFlake nix-alien)
-        (pkgFromFlake nix-search-cli)
-        (pkgFromFlake [ "nixGLIntel" "nixVulkanIntel" ] nixGL)
-        (pkgFromFlake isd)
-        (pkgOverlay [ "archipelago" "dolphin-emu" "plugdata" "zed-editor" ] nixpkgs-unstable)
                 
         stylix.nixosModules.stylix
         home-manager.nixosModules.home-manager {
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
-            sharedModules = [
-              nix-flatpak.homeManagerModules.nix-flatpak
-            ];
             users.carter = import ./home.carter/home.nix;
           };
         }
