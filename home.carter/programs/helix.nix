@@ -19,7 +19,7 @@
         };
         nixd = {
           command = "${pkgs.nixd}/bin/nixd";
-          formatting.command = [ "nixfmt" ];
+          formatting.command = [ "alejandra" ];
           # I use helix for random files, so we rely on system-wide nixpkgs rather than assuming there's a flake in pwd
           nixpkgs.expr = ''import (builtins.getFlake "/etc/nixos").inputs.nixpkgs { }'';
         };
@@ -28,7 +28,7 @@
         {
           name = "nix";
           auto-format = true;
-          formatter.command = "${pkgs.nixfmt-classic}/bin/nixfmt";
+          formatter.command = "${pkgs.alejandra}/bin/alejandra";
         }
         {
           name = "typescript";

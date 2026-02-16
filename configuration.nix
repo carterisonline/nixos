@@ -31,7 +31,7 @@
     helix
     libreoffice-qt6-fresh
     nixd
-    nixfmt-classic
+    alejandra
     
     # Monitoring
     ## GPU

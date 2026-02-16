@@ -69,7 +69,7 @@
           };
           "formatting" = {
             "command" = [
-              "nixfmt"
+              "alejandra"
             ];
           };
         };
