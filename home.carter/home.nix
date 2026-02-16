@@ -142,8 +142,9 @@
   programs.mpv = {
     enable = true;
     config = {
+      gpu-context = "wayland";
       vo = "gpu-next";
-      hwdec = "auto";
+      hwdec = "vaapi";
       ytdl = "yes";
       ytdl-raw-options = "format-sort=vcodec:h264";
     };
