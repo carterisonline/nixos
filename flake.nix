@@ -43,6 +43,7 @@
         stylix.nixosModules.stylix
         home-manager.nixosModules.home-manager {
           home-manager = {
+            backupFileExtension = "hm-backup";
             useGlobalPkgs = true;
             useUserPackages = true;
             users.carter = import ./home.carter/home.nix;
