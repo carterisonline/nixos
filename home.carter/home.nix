@@ -11,6 +11,17 @@
   stylix = ( import ../stylix.nix pkgs ) // {
     targets.vscode.enable = false;
   };
+
+  xdg = {
+    terminal-exec = {
+      enable = true;
+      settings = {
+        default = [
+          "kitty.desktop"  
+        ];
+      };
+    };
+  };
   
   home = {
     file."/home/carter/.gtkrc-2.0".force = lib.mkForce true;
