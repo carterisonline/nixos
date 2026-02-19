@@ -86,6 +86,7 @@
 
   programs.kitty = {
     enable = true;
+    enableGitIntegration = true;
     shellIntegration.enableFishIntegration = true;
     extraConfig = ''
     repaint_delay 4
