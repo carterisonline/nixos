@@ -31,7 +31,7 @@
       specialArgs = attrs;
       
       modules = [
-        (pkgOverlay [ "fish" ] nixpkgs-unstable)
+        (pkgOverlay [ "fish" "stoat-desktop" ] nixpkgs-unstable)
         ./settings.nix
         ./configuration.nix
         
