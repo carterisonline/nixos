@@ -28,10 +28,10 @@
    {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       inherit system;
-      specialArgs = attrs;
+      specialArgs = attrs // { inherit system; };
       
       modules = [
-        (pkgOverlay [ "fish" "stoat-desktop" ] nixpkgs-unstable)
+        (pkgOverlay [ "fish" ] nixpkgs-unstable)
         ./settings.nix
         ./configuration.nix
         
