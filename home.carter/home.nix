@@ -67,6 +67,7 @@
       qpwgraph
       rnnoise-plugin
       scrcpy
+      vital
       xarchiver
       yabridge
       yabridgectl
