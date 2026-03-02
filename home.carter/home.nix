@@ -38,6 +38,7 @@
     packages = with pkgs; [ 
       android-tools
       appimage-run
+      archipelago
       auto-patchelf
       btop-cuda
       calf
@@ -49,6 +50,7 @@
       doomrunner
       easyeffects
       ff2mpv-rust
+      gale
       gimp3-with-plugins
       gocryptfs
       goofcord
