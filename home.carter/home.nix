@@ -100,6 +100,7 @@
     repaint_delay 4
     input_delay 1
     sync_to_monitor no
+    confirm_os_window_close 0
     '';
   };
 
