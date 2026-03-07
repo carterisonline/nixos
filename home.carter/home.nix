@@ -70,6 +70,7 @@
       rnnoise-plugin
       scrcpy
       virt-manager
+      virtiofsd
       vital
       xarchiver
       yabridge
