@@ -3,11 +3,13 @@
 {
     virtualisation = {
       libvirtd.enable = true;
-      virtualbox.host ={
+      vmware.host = {
         enable = true;
-        enableKvm = true;
-        enableExtensionPack = true;
-        addNetworkInterface = false;
+        extraConfig = ''
+          # Allow unsupported device's OpenGL and Vulkan acceleration for guest vGPU
+          mks.gl.allowUnsupportedDrivers = "TRUE"
+          mks.vk.allowUnsupportedDevices = "TRUE"
+        '';
       };
       podman = {
         enable = true;
