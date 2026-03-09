@@ -1,9 +1,14 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
     virtualisation = {
       libvirtd.enable = true;
-      virtualbox.host.enable = true;
+      virtualbox.host ={
+        enable = true;
+        enableKvm = true;
+        enableExtensionPack = true;
+        addNetworkInterface = false;
+      };
       podman = {
         enable = true;
         dockerCompat = true;
