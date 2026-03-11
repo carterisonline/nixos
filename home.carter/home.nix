@@ -47,6 +47,7 @@
       chatterino7
       comma
       dejavu_fonts
+      dolphin-emu
       doomrunner
       easyeffects
       ff2mpv-rust
