@@ -54,7 +54,6 @@
       gale
       gimp3-with-plugins
       gocryptfs
-      goofcord
       gzdoom
       imhex
       jetbrains.idea-community-bin
