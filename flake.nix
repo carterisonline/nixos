@@ -31,7 +31,7 @@
       specialArgs = attrs // { inherit system; };
       
       modules = [
-        (pkgOverlay [ "fish" "goofcord" ] nixpkgs-unstable)
+        (pkgOverlay [ "fish" ] nixpkgs-unstable)
         ./settings.nix
         ./configuration.nix
         

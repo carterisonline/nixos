@@ -69,6 +69,7 @@
       qpwgraph
       rnnoise-plugin
       scrcpy
+      vesktop
       vital
       xarchiver
       yabridge
