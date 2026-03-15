@@ -4,12 +4,26 @@
   programs.helix = {
     enable = true;
     settings = {
-      editor.cursor-shape = {
-        normal = "block";
-        insert = "bar";
-        select = "underline";
+      theme = "dark_plus";
+      editor = {
+        bufferline = "multiple";
+        cursorline = true;
+        completion-replace = true;
+        end-of-line-diagnostics = "hint";
+        cursor-shape = {
+          normal = "block";
+          insert = "bar";
+          select = "underline";
+        };
+        inline-diagnostics = {
+          cursor-line = "disable";
+          other-lines = "disable";
+        };
+        lsp = {
+          display-messages = true;
+          display-inlay-hints = true;
+        };
       };
-      editor.lsp.display-messages = true;
     };
     languages = {
       language-server = {

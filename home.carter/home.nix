@@ -9,7 +9,10 @@
   ];
 
   stylix = ( import ../stylix.nix pkgs ) // {
-    targets.vscode.enable = false;
+    targets = {
+      vscode.enable = false;
+      helix.enable = false;
+    };
   };
 
   xdg = {
