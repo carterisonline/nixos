@@ -52,6 +52,10 @@
             args = [ "format" "--stdin-file-path=file.ts" ];
           };
         }
+        {
+          name = "glsl";
+          file-types = ["glsl" "fsh" "vsh" "vert" "frag"];
+        }
       ];
     };
   };
