@@ -59,6 +59,7 @@
       "editor.formatOnSave" = true;
       "editor.inlayHints.enabled" = "offUnlessPressed";
       "editor.minimap.enabled" = false;
+      "jdk.telemetry.enabled" = false;
       "[nix]"."editor.tabSize" = 2;
       "nix.enableLanguageServer" = true;
       "nix.serverPath" = "nixd";
