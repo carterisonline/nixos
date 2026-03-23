@@ -70,6 +70,7 @@
       prismlauncher
       protontricks
       qpwgraph
+      reaper
       rnnoise-plugin
       scrcpy
       vesktop
