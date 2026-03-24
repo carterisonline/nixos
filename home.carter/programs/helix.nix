@@ -16,7 +16,7 @@
           select = "underline";
         };
         inline-diagnostics = {
-          cursor-line = "disable";
+          cursor-line = "hint";
           other-lines = "disable";
         };
         lsp = {
