@@ -47,6 +47,7 @@
     v4l-utils
     wayland-utils
     ## Network
+    gnunet-gtk
     nmap
 
     # Multimedia
