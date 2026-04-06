@@ -5,13 +5,15 @@
     stylix.url = "github:danth/stylix/release-25.11";
     home-manager.url = "github:nix-community/home-manager/release-25.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    nix-ld.url = "github:Mic92/nix-ld";
+    nix-ld.inputs.nixpkgs.follows = "nixpkgs";
     nix-alien.url = "github:thiagokokada/nix-alien";
     nix-alien.inputs.nixpkgs.follows = "nixpkgs";
     lsfg-vk-flake.url = "github:pabloaul/lsfg-vk-flake/main";
     lsfg-vk-flake.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nixpkgs, nixpkgs-unstable, stylix, home-manager, nix-alien, lsfg-vk-flake, ... }@attrs:
+  outputs = { nixpkgs, nixpkgs-unstable, stylix, home-manager, nix-ld, nix-alien, lsfg-vk-flake, ... }@attrs:
   let
     system = "x86_64-linux";
     pkgUse = x: { environment.systemPackages = x; };
@@ -39,7 +41,10 @@
         (pkgImport ./packages/diagnose/default.nix {})
         (pkgImport ./packages/bitwig-studio/default.nix {})
         (pkgFromFlake nix-alien)
-                
+        
+        nix-ld.nixosModules.nix-ld
+        lsfg-vk-flake.nixosModules.default                
+        
         stylix.nixosModules.stylix
         home-manager.nixosModules.home-manager {
           home-manager = {
@@ -49,8 +54,6 @@
             users.carter = import ./home.carter/home.nix;
           };
         }
-
-        lsfg-vk-flake.nixosModules.default
 
         {
           system.stateVersion = "24.05"; # DO NOT CHANGE OR REMOVE
