@@ -5,8 +5,6 @@
     stylix.url = "github:danth/stylix/release-25.11";
     home-manager.url = "github:nix-community/home-manager/release-25.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    nix-ld.url = "github:Mic92/nix-ld";
-    nix-ld.inputs.nixpkgs.follows = "nixpkgs";
     nix-alien.url = "github:thiagokokada/nix-alien";
     nix-alien.inputs.nixpkgs.follows = "nixpkgs";
     lsfg-vk-flake.url = "github:pabloaul/lsfg-vk-flake/main";
@@ -41,8 +39,7 @@
         (pkgImport ./packages/diagnose/default.nix {})
         (pkgImport ./packages/bitwig-studio/default.nix {})
         (pkgFromFlake nix-alien)
-        
-        nix-ld.nixosModules.nix-ld
+
         lsfg-vk-flake.nixosModules.default                
         
         stylix.nixosModules.stylix
