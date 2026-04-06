@@ -11,7 +11,7 @@
     lsfg-vk-flake.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nixpkgs, nixpkgs-unstable, stylix, home-manager, nix-ld, nix-alien, lsfg-vk-flake, ... }@attrs:
+  outputs = { nixpkgs, nixpkgs-unstable, stylix, home-manager, nix-alien, lsfg-vk-flake, ... }@attrs:
   let
     system = "x86_64-linux";
     pkgUse = x: { environment.systemPackages = x; };
@@ -38,6 +38,7 @@
         (pkgImport ./packages/prologue-sound-theme/default.nix {})
         (pkgImport ./packages/diagnose/default.nix {})
         (pkgImport ./packages/bitwig-studio/default.nix {})
+        (pkgImport ./packages/lorenz/default.nix {})
         (pkgFromFlake nix-alien)
 
         lsfg-vk-flake.nixosModules.default                
