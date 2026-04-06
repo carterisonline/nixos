@@ -39,6 +39,7 @@
         (pkgImport ./packages/diagnose/default.nix {})
         (pkgImport ./packages/bitwig-studio/default.nix {})
         (pkgImport ./packages/lorenz/default.nix {})
+        (pkgImport ./packages/ambirr/default.nix {})
         (pkgFromFlake nix-alien)
 
         lsfg-vk-flake.nixosModules.default                
