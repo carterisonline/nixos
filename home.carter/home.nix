@@ -71,6 +71,7 @@
       protontricks
       qpwgraph
       reaper
+      renderdoc
       rnnoise-plugin
       scrcpy
       vesktop
