@@ -37,6 +37,16 @@
     };
   };
 
+  services.openssh = {
+    enable = true;
+    settings = {
+      PasswordAuthentication = false;
+      KbdInteractiveAuthentication = false;
+      PermitRootLogin = "no";
+      AllowUsers = [ "carter" ];
+    };
+  };
+
   services.tor = {
     enable = true;
     client.enable = true;
