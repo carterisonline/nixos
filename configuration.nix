@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   imports =
@@ -84,7 +84,16 @@
 
   programs.ghidra.enable = true;
   programs.nix-ld.enable = true;
-  programs.steam.enable = true;
+
+  age.secrets.steam-api-key.file = ./secrets/steam-api-key.age;
+  programs.steam = {
+    enable = true;
+    presence = {
+      enable = true;
+      steamApiKeyFile = config.age.secrets.steam-api-key.path;
+      userIds = [ "76561198202701980" ];
+    };
+  };
 
   services.flatpak.enable = true;
 

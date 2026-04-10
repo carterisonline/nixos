@@ -9,9 +9,13 @@
     nix-alien.inputs.nixpkgs.follows = "nixpkgs";
     lsfg-vk-flake.url = "github:pabloaul/lsfg-vk-flake/main";
     lsfg-vk-flake.inputs.nixpkgs.follows = "nixpkgs";
+    steam-presence.url = "github:JustTemmie/steam-presence";
+    steam-presence.inputs.nixpkgs.follows = "nixpkgs";
+    agenix.url = "github:ryantm/agenix";
+    agenix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nixpkgs, nixpkgs-unstable, stylix, home-manager, nix-alien, lsfg-vk-flake, ... }@attrs:
+  outputs = { nixpkgs, nixpkgs-unstable, stylix, home-manager, nix-alien, lsfg-vk-flake, steam-presence, agenix, ... }@attrs:
   let
     system = "x86_64-linux";
     pkgUse = x: { environment.systemPackages = x; };
@@ -43,9 +47,12 @@
         (pkgImport ./packages/stringo/default.nix {})
         (pkgImport ./packages/imagein/default.nix {})
         (pkgFromFlake nix-alien)
+        (pkgFromFlake agenix)
 
         lsfg-vk-flake.nixosModules.default                
-        
+
+        agenix.nixosModules.default
+        steam-presence.nixosModules.steam-presence
         stylix.nixosModules.stylix
         home-manager.nixosModules.home-manager {
           home-manager = {
