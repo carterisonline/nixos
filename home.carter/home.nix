@@ -72,6 +72,7 @@
       qpwgraph
       reaper
       rnnoise-plugin
+      ryubing
       scrcpy
       vesktop
       vital
