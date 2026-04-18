@@ -35,7 +35,7 @@
       specialArgs = attrs // { inherit system; };
       
       modules = [
-        (pkgOverlay [ "fish" "eden" ] nixpkgs-unstable)
+        (pkgOverlay [ "fish" "ollama-cuda" ] nixpkgs-unstable)
         ./settings.nix
         ./configuration.nix
         
