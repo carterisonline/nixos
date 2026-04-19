@@ -60,6 +60,7 @@
 
     # System Management
     nix-index
+    nix-search-cli
 
     # Terminal
     kitty
