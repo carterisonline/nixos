@@ -14,6 +14,6 @@
     });
     acceleration = "cuda";
     syncModels = true;
-    loadModels = [ "functiongemma:270m" "qwen2.5-coder:7b" ];
+    loadModels = [ "functiongemma:270m" "qwen2.5-coder:7b" "qwen3.5:4b" "qwen3.5:0.8b" ];
   };
 }
