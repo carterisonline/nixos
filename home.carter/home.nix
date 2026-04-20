@@ -48,6 +48,7 @@
       cardinal
       carla
       chatterino7
+      ckan
       comma
       dejavu_fonts
       dolphin-emu
