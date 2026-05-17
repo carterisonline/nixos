@@ -48,8 +48,6 @@
     v4l-utils
     wayland-utils
     ## Network
-    logmein-hamachi
-    haguichi
     gnunet-gtk
     nmap
 
