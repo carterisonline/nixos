@@ -48,6 +48,7 @@
     v4l-utils
     wayland-utils
     ## Network
+    cloudflare-warp
     gnunet-gtk
     nmap
 
