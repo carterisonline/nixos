@@ -55,7 +55,7 @@
 
     userSettings = {
       "chat.disableAIFeatures" = true;
-      "editor.fontFamily" = "'JetBrains Mono NL', 'monospace', monospace";
+      "editor.fontFamily" = "JetBrains Mono NL";
       "editor.formatOnSave" = true;
       "editor.inlayHints.enabled" = "offUnlessPressed";
       "editor.minimap.enabled" = false;
