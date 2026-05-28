@@ -64,6 +64,7 @@
       kdePackages.okular
       krita
       lsp-plugins
+      nodejs_latest
       nodePackages.vscode-json-languageserver
       obsidian
       parabolic
