@@ -11,6 +11,7 @@ let
     gpu-profile-selector
     gsconnect
     paperwm
+    rudra
     solaar-extension
     steal-my-focus-window
     tray-icons-reloaded
@@ -125,6 +126,18 @@ in
         extend-height = true;
         running-indicator-style = "DOTS";
         transparency-mode = "FIXED";
+      };
+
+      "org/gnome/shell/extensions/rudra" = {
+        background-color = "#261157";
+        background-opacity = 205;
+        corner-radius = 12;
+        font-name = "Adwaita Sans 12";
+        highlight-color = "#4d3681";
+        hover-color = "#4d3681";
+        selection-color = "#b493ff";
+        selection-opacity = 70;
+        toggle-launcher = [ "<Super>" ];
       };
 
       "org/gnome/shell/extensions/paperwm" = {
