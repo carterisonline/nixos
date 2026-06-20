@@ -30,14 +30,6 @@
   services.tailscale.enable = true;
   services.usbmuxd.enable = true;
 
-  services.gnunet = {
-    enable = true;
-    load = {
-      maxNetDownBandwidth = 50000000;
-      maxNetUpBandwidth = 50000000;
-    };
-  };
-
   services.openssh = {
     enable = true;
     settings = {

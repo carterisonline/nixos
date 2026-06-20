@@ -49,7 +49,6 @@
     wayland-utils
     ## Network
     cloudflare-warp
-    gnunet-gtk
     nmap
 
     # Multimedia
