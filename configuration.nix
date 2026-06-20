@@ -57,7 +57,7 @@
 
     # Multiplatform
     winetricks
-    wineWowPackages.stagingFull
+    wineWow64Packages.stagingFull
 
     # System Management
     nix-index
