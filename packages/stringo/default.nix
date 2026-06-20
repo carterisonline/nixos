@@ -8,7 +8,7 @@ stdenv.mkDerivation rec {
     hash = "sha256-q5TNUG8Dr69nTN/e55H7sjh859wfRajztrz2tP+lqYQ=";
   };
 
-  unpackPhase = "${ouch}/bin/ouch decompress $src";
+  unpackPhase = "${ouch}/bin/ouch decompress $src --yes";
 
   buildInputs = [curlFull.out fontconfig.lib libgcc.lib freetype.out libgcc.lib];
 
