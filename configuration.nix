@@ -10,7 +10,6 @@
       ./subconf/environment.nix
       ./subconf/gnome.nix
       ./subconf/graphics.nix
-      ./subconf/ml.nix
       ./subconf/plymouth.nix
       ./subconf/runtime.nix
       ./subconf/security.nix
