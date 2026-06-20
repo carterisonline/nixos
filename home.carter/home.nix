@@ -60,7 +60,7 @@
       gocryptfs
       gzdoom
       imhex
-      jetbrains.idea-community-bin
+      jetbrains.idea-oss
       kdePackages.okular
       krita
       lsp-plugins
