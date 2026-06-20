@@ -20,7 +20,7 @@
   hardware.nvidia = {
     modesetting.enable = true;
     open = false;
-    package = config.boot.kernelPackages.nvidiaPackages.latest;
+    package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
     prime = {
       intelBusId = "PCI:0:2:0";
       nvidiaBusId = "PCI:22:0:0";
