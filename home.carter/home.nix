@@ -68,6 +68,7 @@
       obsidian
       parabolic
       patchelf
+      pear-desktop
       prismlauncher
       protontricks
       qpwgraph
@@ -80,7 +81,6 @@
       xarchiver
       yabridge
       yabridgectl
-      youtube-music # soon renamed to pear-desktop
    ];
   
     username = "carter";
