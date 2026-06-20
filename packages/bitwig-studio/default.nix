@@ -14,14 +14,19 @@
 , libglvnd
 , libjack2
 , libjpeg
+, libx11
+, libxcb
+, libxcb-util
+, libxcb-wm
+, libxcursor
 , libxkbcommon
+, libxtst
 , makeWrapper
 , pango
 , pipewire
 , pulseaudio
 , wrapGAppsHook3
 , xdg-utils
-, xorg
 , zlib
 }:
 
@@ -44,7 +49,7 @@ stdenv.mkDerivation rec {
   dontBuild = true;
   dontWrapGApps = true; # we only want $gappsWrapperArgs here
 
-  buildInputs = with xorg; [
+  buildInputs = [
     alsa-lib
     atk
     cairo
@@ -58,16 +63,16 @@ stdenv.mkDerivation rec {
     # libjpeg8 is required for converting jpeg's to colour palettes
     libjpeg
     libxcb
-    libXcursor
-    libX11
-    libXtst
+    libxcursor
+    libx11
+    libxtst
     libxkbcommon
     pango
     pipewire
     pulseaudio
     stdenv.cc.cc.lib
-    xcbutil
-    xcbutilwm
+    libxcb-util
+    libxcb-wm
     zlib
   ];
 
