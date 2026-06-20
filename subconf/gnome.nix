@@ -54,6 +54,7 @@ in
     extraGSettingsOverrides = ''
       [org.gnome.mutter]
       experimental-features=['kms-modifiers']
+      overlay-key=""
     '';
   };
 }
