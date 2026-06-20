@@ -53,7 +53,7 @@ in
     # I'm not 100% sure what kms-modifiers does but apparently it fixes some issues with Nvidia drivers
     extraGSettingsOverrides = ''
       [org.gnome.mutter]
-      experimental-features=['variable-refresh-rate', 'scale-monitor-framebuffer', 'kms-modifiers']
+      experimental-features=['kms-modifiers']
     '';
   };
 }
