@@ -65,7 +65,6 @@
       krita
       lsp-plugins
       nodejs_latest
-      nodePackages.vscode-json-languageserver
       obsidian
       parabolic
       patchelf
@@ -77,6 +76,7 @@
       scrcpy
       vesktop
       vital
+      vscode-json-languageserver
       xarchiver
       yabridge
       yabridgectl
