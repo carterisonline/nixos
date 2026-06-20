@@ -8,6 +8,7 @@ in
 {
   environment.systemPackages = with pkgs; [
     authenticator
+    bazaar
     errands
     eyedropper
     metadata-cleaner
@@ -24,6 +25,7 @@ in
     gnome-console
     gnome-music
     gnome-photos
+    gnome-software
     gnome-system-monitor
     gnome-terminal
     gnome-text-editor
