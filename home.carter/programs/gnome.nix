@@ -190,7 +190,7 @@ in
 
       "org/gnome/shell/extensions/vitals" = {
         hide-zeros = true;
-        hot-sensors = ["_processor_frequency_" "_battery_rate_" "_temperature_thinkpad_cpu_"];
+        hot-sensors = ["_processor_frequency_" "_temperature_thinkpad_cpu_"];
         icon-style = 1;
         position-in-panel = 2;
       };
