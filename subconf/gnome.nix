@@ -45,7 +45,7 @@ in
     sushi.enable = true;
   };
   # prefer Nvidia card on Mutter
-  services.udev.extraRules = ''ENV{ID_PATH}=="pci-0000:22:00.0", TAG+="mutter-device-preferred-primary"'';
+  services.udev.extraRules = ''ENV{ID_PATH}=="pci-0000:52:00.0", TAG+="mutter-device-preferred-primary"'';
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome = {
     enable = true;

@@ -23,7 +23,7 @@
     package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
     prime = {
       intelBusId = "PCI:0:2:0";
-      nvidiaBusId = "PCI:22:0:0";
+      nvidiaBusId = "PCI:52:0:0";
       offload.enable = true;
       allowExternalGpu = true;
     };
