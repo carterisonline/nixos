@@ -29,7 +29,6 @@
 
     # Document Management
     helix
-    libreoffice-qt6-fresh
     nixd
     alejandra
     
@@ -47,7 +46,6 @@
     v4l-utils
     wayland-utils
     ## Network
-    cloudflare-warp
     nmap
 
     # Multimedia
@@ -83,7 +81,6 @@
     };
   };
 
-  programs.ghidra.enable = true;
   programs.nix-ld.enable = true;
 
   age.secrets.steam-api-key.file = ./secrets/steam-api-key.age;

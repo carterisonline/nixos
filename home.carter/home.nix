@@ -41,41 +41,23 @@
     packages = with pkgs; [ 
       android-tools
       appimage-run
-      archipelago
-      auto-patchelf
       btop-cuda
-      calf
       cardinal
       carla
       chatterino7
       ckan
-      comma
       dejavu_fonts
-      dolphin-emu
-      doomrunner
       easyeffects
       ff2mpv-rust
       gale
-      gimp3-with-plugins
       gocryptfs
-      gzdoom
-      imhex
-      jetbrains.idea-oss
-      kdePackages.okular
-      krita
-      lsp-plugins
       nodejs_latest
-      obsidian
-      parabolic
-      patchelf
       pear-desktop
-      prismlauncher
       protontricks
       qpwgraph
       reaper
       rnnoise-plugin
       scrcpy
-      vesktop
       vital
       vscode-json-languageserver
       xarchiver
@@ -174,26 +156,6 @@
       "\\C-\\d" = "kill-word";
       "\\C-\\M-\\b" = "backward-kill-line";
       "\\C-\\M-\\d" = "kill-line";
-    };
-  };
-
-  programs.retroarch = {
-    enable = true;
-    cores = {
-      beetle-psx.enable = true;
-      beetle-saturn.enable = true;
-      citra.enable = true;
-      dolphin.enable = true;
-      flycast.enable = true;
-      genesis-plus-gx.enable = true;
-      melonds.enable = true;
-      mgba.enable = true;
-      mupen64plus.enable = true;
-      nestopia.enable = true;
-      pcsx2.enable = true;
-      ppsspp.enable = true;
-      sameboy.enable = true;
-      snes9x.enable = true;
     };
   };
   
