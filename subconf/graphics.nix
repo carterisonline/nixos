@@ -3,7 +3,6 @@
 {
   boot.kernelParams = [ "i915.force_probe=9a49" "i915.enable_guc=3" ];
   environment.sessionVariables.VK_DRIVER_FILES = "/run/opengl-driver/share/vulkan/icd.d/nvidia_icd.json:/run/opengl-driver-32/share/vulkan/icd.d/nvidia_icd.json:/run/opengl-driver/share/vulkan/icd.d/intel_icd.x86_64.json:/run/opengl-driver-32/share/vulkan/icd.d/intel_icd.i686.json";
-  environment.systemPackages = [ pkgs.cudatoolkit ];
   fonts.fontconfig.useEmbeddedBitmaps = true;
   hardware.graphics = {
     enable = true;
