@@ -28,6 +28,7 @@
     man-pages man-pages-posix
 
     # Document Management
+    collabora-desktop
     helix
     nixd
     alejandra
