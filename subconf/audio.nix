@@ -14,6 +14,26 @@
           "default.clock.allowed-rates" = [ 44100 48000 ];
         };
       };
+      "20-loopback-modules" = {
+        "context.modules" = [{
+          name = "libpipewire-module-loopback";
+          args = {
+            "node.description" = "Loopback Sink";
+            "capture.props" = {
+              "node.name" = "Loopback_Sink";
+              "media.class" = "Audio/Sink";
+              "audio.position" = "FL,FR";
+            };
+            "playback.props" = {
+              "node.name" = "playback.Loopback_Sink";
+              "audio.position" = "AUX0,AUX1";
+              "target.object" = "alsa_output.usb-GuangZhou_FiiO_Electronics_Co._Ltd_FiiO_K5_Pro-00.pro-output-0";
+              "stream.dont-remix" = true;
+              "node.passive" = true;
+            };
+          };
+        }];
+      };
     };
   };
 
