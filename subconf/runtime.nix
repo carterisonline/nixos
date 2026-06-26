@@ -9,7 +9,7 @@ in
   services.ananicy = {
     enable = true;
     package = pkgs.ananicy-cpp;
-    rulesProvider = pkgs.ananicy-cpp;
+    rulesProvider = pkgs.ananicy-rules-cachyos;
     extraRules = [
       {
         # Do what Windows does with Task Manager and make `missioncenter` a top-priority process
@@ -17,10 +17,6 @@ in
         nice = -20;
         ioclass = "realtime";
         oom_score_adj = -999;
-      }
-      {
-        name = "gamescope";
-        nice = -20;
       }
     ];
   };
