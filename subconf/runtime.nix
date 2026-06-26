@@ -4,6 +4,10 @@ let
   tuned-profiles = pkgs.callPackage ../packages/tuned-profiles/default.nix {};
 in
 {
+  hardware.block.scheduler = {
+    "mmcblk[0-9]*" = "mq-deadline";
+    "nvme[0-9]*" = "kyber";
+  };
   # if this sets my max frequency to 3.8Mhz. I am screwed
   powerManagement.cpufreq.max = 3800000;
   services.ananicy = {
