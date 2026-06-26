@@ -24,10 +24,13 @@ in
       }
     ];
   };
-  # services.scx = {
-  #   enable = true;
-  #   scheduler = "scx_lavd";
-  # };
+  services.scx = {
+    enable = true;
+    scheduler = "scx_lavd";
+    extraArgs = [
+      "--enable-cpu-bw"
+    ];
+  };
   # services.power-profiles-daemon.enable = false;
   # services.tuned = {
   #   enable = true;
