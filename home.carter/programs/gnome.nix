@@ -12,7 +12,6 @@ let
     gsconnect
     paperwm
     rudra
-    solaar-extension
     steal-my-focus-window
     tray-icons-reloaded
     vitals

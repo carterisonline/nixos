@@ -19,7 +19,6 @@
     autostart = {
       enable = true;
       entries = [
-        "${pkgs.solaar}/share/applications/solaar.desktop"
         "${pkgs.easyeffects}/share/applications/com.github.wwmm.easyeffects.desktop"
       ];
     };
