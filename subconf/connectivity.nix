@@ -7,11 +7,6 @@
     powerOnBoot = true;
   };
 
-  hardware.logitech.wireless = {
-    enable = true;
-    enableGraphical = true;
-  };
-
   hardware.steam-hardware.enable = true;
 
   networking = {
