@@ -91,7 +91,7 @@ in {
 
       "org/gnome/shell" = {
         disable-user-extensions = false;
-        enabled-extensions = builtins.map (x: x.extensionUuid) gnomeExtensions;
+        enabled-extensions = map (x: x.extensionUuid) gnomeExtensions;
         favorite-apps = [
           "firefox.desktop"
           "org.gnome.Nautilus.desktop"
@@ -149,7 +149,7 @@ in {
         vertical-margin = 0;
         vertical-margin-bottom = 0;
         window-gap = 4;
-        winprops = builtins.map builtins.toJSON [
+        winprops = map builtins.toJSON [
           # avoid tiling plugin menus and dialogs
           {
             wm_class = "yabridge-host.exe";
