@@ -53,6 +53,7 @@
         (pkgOverlay ["fish"] nixpkgs-unstable)
         ./settings.nix
         ./configuration.nix
+        ./modules/mic-switcher/default.nix
 
         (pkgImport ./packages/prologue-sound-theme/default.nix {})
         (pkgImport ./packages/diagnose/default.nix {})

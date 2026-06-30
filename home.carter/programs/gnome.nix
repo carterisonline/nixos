@@ -89,6 +89,12 @@ in {
         name = "Launch mission center";
       };
 
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4" = {
+        binding = "<Alt>q";
+        command = "toggle-mic";
+        name = "Toggle Mic";
+      };
+
       "org/gnome/shell" = {
         disable-user-extensions = false;
         enabled-extensions = map (x: x.extensionUuid) gnomeExtensions;
