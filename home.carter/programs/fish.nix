@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   programs.fish = {
     enable = true;
     functions = {
@@ -28,7 +26,7 @@
               return $status
             end
           end
-                
+
           set __cnf_resolved (rg "^$argv[1]:" ~/.cache/cnf-resolved 2>/dev/null)
           if test $status -eq 0
             set __cnf_resolved_pkg (echo $__cnf_resolved | sd '^.*:([^:]+)$' '$1')
@@ -42,7 +40,7 @@
             function trim_out
               echo $argv[1] | sd '\.(out|bin)' ""
             end
-          
+
             set __cnf_resolved (nix-locate -w --top-level --at-root --minimal "/bin/$argv[1]" 2>/dev/null)
             if test $status -eq 0
               if test (count $__cnf_resolved) -eq 1
@@ -113,7 +111,7 @@
     };
     loginShellInit = ''
       direnv hook fish | source
-  
+
       set hydro_symbol_prompt ">"
       set base16_fish_shell_background "dark"
 
@@ -152,7 +150,7 @@
       snshx = "sudo nshx";
       rt-gl-intel = "nixGLIntel nix-alien -f";
       rt-vk-intel = "nixVulkanIntel nix-alien -f";
-      nixos-rebuild-nonfree = "sudo bash -c 'export NIXPKGS_ALLOW_UNFREE=1 && nixos-rebuild switch --impure -L'";
+      nixos-rebuild-nonfree = "nixos-rebuild switch --flake .# -L --sudo";
       killwine = "ps -A | rg '\.exe|wine' | cut -d\\  -f 3 | xargs kill -9";
     };
   };
