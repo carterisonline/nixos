@@ -1,6 +1,4 @@
-{pkgs, ...}: let
-  tuned-profiles = pkgs.callPackage ../packages/tuned-profiles/default.nix {};
-in {
+{pkgs, ...}: {
   hardware.block.scheduler = {
     "mmcblk[0-9]*" = "mq-deadline";
     "nvme[0-9]*" = "kyber";
@@ -28,37 +26,4 @@ in {
       "--enable-cpu-bw"
     ];
   };
-  # services.power-profiles-daemon.enable = false;
-  # services.tuned = {
-  #   enable = true;
-  #   settings = {
-  #     profile_dirs = "/etc/tuned/profiles,${tuned-profiles}";
-  #   };
-  #   ppdSupport = true;
-  #   ppdSettings.profiles = {
-  #     balanced = "balanced";
-  #     performance = "performance";
-  #     power-saver = "powersave";
-  #   };
-  #   profiles = {
-  #     powersave = {
-  #       script = {
-  #         type = "script";
-  #         script = "${tuned-profiles}/bin/tuned-powersave";
-  #       };
-  #     };
-  #     balanced = {
-  #       script = {
-  #         type = "script";
-  #         script = "${tuned-profiles}/bin/tuned-balanced";
-  #       };
-  #     };
-  #     performance = {
-  #       script = {
-  #         type = "script";
-  #         script = "${tuned-profiles}/bin/tuned-performance";
-  #       };
-  #     };
-  #   };
-  # };
 }
