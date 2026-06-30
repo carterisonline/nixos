@@ -1,7 +1,6 @@
 {pkgs, ...}:
 
 let
-  auto-screen-brightness = pkgs.callPackage ../../packages/gnomeExtensions.auto-screen-brightness/default.nix {};
   gnomeExtensions = with pkgs.gnomeExtensions; [
     advanced-alttab-window-switcher
     appindicator
