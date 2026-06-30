@@ -1,5 +1,8 @@
-{ gnused, unixtools, writeShellScriptBin }:
-
+{
+  gnused,
+  unixtools,
+  writeShellScriptBin,
+}:
 writeShellScriptBin "diagnose" ''
   esc=$(printf "\033")
 

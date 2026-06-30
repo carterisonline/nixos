@@ -1,9 +1,6 @@
-{ pkgs, ... }:
-
-let
+{pkgs, ...}: let
   tuned-profiles = pkgs.callPackage ../packages/tuned-profiles/default.nix {};
-in
-{
+in {
   hardware.block.scheduler = {
     "mmcblk[0-9]*" = "mq-deadline";
     "nvme[0-9]*" = "kyber";

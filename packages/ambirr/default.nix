@@ -1,4 +1,12 @@
-{ curlFull, fontconfig, freetype, libgcc, stdenv, fetchzip, lib }:
+{
+  curlFull,
+  fontconfig,
+  freetype,
+  libgcc,
+  stdenv,
+  fetchzip,
+  lib,
+}:
 stdenv.mkDerivation rec {
   pname = "ambirr";
   version = "0.2";

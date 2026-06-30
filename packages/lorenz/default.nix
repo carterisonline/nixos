@@ -1,4 +1,12 @@
-{ curlFull, fontconfig, freetype, libgcc, stdenv, fetchzip, lib }:
+{
+  curlFull,
+  fontconfig,
+  freetype,
+  libgcc,
+  stdenv,
+  fetchzip,
+  lib,
+}:
 stdenv.mkDerivation rec {
   pname = "lorenz";
   version = "0.1.1";
@@ -8,7 +16,7 @@ stdenv.mkDerivation rec {
     hash = "sha256-w6fVsrfr4lgEmZd/PSkLnmNs/nwmc76GSI+hLk5VusM=";
   };
 
-  buildInputs = [ curlFull.out fontconfig.lib freetype.out libgcc.lib ];
+  buildInputs = [curlFull.out fontconfig.lib freetype.out libgcc.lib];
 
   installPhase = ''
     mkdir -p $out

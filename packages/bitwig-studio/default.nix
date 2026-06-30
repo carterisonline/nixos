@@ -1,35 +1,35 @@
-{ stdenv
-, fetchurl
-, alsa-lib
-, atk
-, cairo
-, dpkg
-, ffmpeg
-, freetype
-, gdk-pixbuf
-, glib
-, gtk3
-, harfbuzz
-, lib
-, libglvnd
-, libjack2
-, libjpeg
-, libx11
-, libxcb
-, libxcb-util
-, libxcb-wm
-, libxcursor
-, libxkbcommon
-, libxtst
-, makeWrapper
-, pango
-, pipewire
-, pulseaudio
-, wrapGAppsHook3
-, xdg-utils
-, zlib
+{
+  stdenv,
+  fetchurl,
+  alsa-lib,
+  atk,
+  cairo,
+  dpkg,
+  ffmpeg,
+  freetype,
+  gdk-pixbuf,
+  glib,
+  gtk3,
+  harfbuzz,
+  lib,
+  libglvnd,
+  libjack2,
+  libjpeg,
+  libx11,
+  libxcb,
+  libxcb-util,
+  libxcb-wm,
+  libxcursor,
+  libxkbcommon,
+  libxtst,
+  makeWrapper,
+  pango,
+  pipewire,
+  pulseaudio,
+  wrapGAppsHook3,
+  xdg-utils,
+  zlib,
 }:
-
 stdenv.mkDerivation rec {
   pname = "bitwig-studio";
   version = "5.1.9";
@@ -39,7 +39,7 @@ stdenv.mkDerivation rec {
     hash = "sha256-J5kLqXCMnGb0ZMhES6PQIPjN51ptlBGj4Fy8qSzJ6Qg=";
   };
 
-  nativeBuildInputs = [ dpkg makeWrapper wrapGAppsHook3 ];
+  nativeBuildInputs = [dpkg makeWrapper wrapGAppsHook3];
 
   unpackCmd = ''
     mkdir -p root
@@ -105,8 +105,8 @@ stdenv.mkDerivation rec {
       # make xdg-open overrideable at runtime
       wrapProgram $f \
         "''${gappsWrapperArgs[@]}" \
-        --prefix PATH : "${lib.makeBinPath [ ffmpeg ]}" \
-        --suffix PATH : "${lib.makeBinPath [ xdg-utils ]}" \
+        --prefix PATH : "${lib.makeBinPath [ffmpeg]}" \
+        --suffix PATH : "${lib.makeBinPath [xdg-utils]}" \
         --suffix LD_LIBRARY_PATH : "${lib.strings.makeLibraryPath buildInputs}"
     done
 
@@ -125,7 +125,7 @@ stdenv.mkDerivation rec {
     '';
     homepage = "https://www.bitwig.com/";
     license = licenses.unfree;
-    platforms = [ "x86_64-linux" ];
-    maintainers = with maintainers; [ bfortz michalrus mrVanDalo ];
+    platforms = ["x86_64-linux"];
+    maintainers = with maintainers; [bfortz michalrus mrVanDalo];
   };
 }

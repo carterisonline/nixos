@@ -1,6 +1,4 @@
-pkgs:
-
-{
+pkgs: {
   enable = true;
   image = ./wallpaper.jpg;
   polarity = "dark";
@@ -10,7 +8,7 @@ pkgs:
   fonts = with pkgs; {
     emoji.name = "JoyPixels";
     emoji.package = joypixels;
-    
+
     sansSerif.name = "Inter";
     sansSerif.package = inter;
 

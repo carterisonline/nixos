@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   programs.helix = {
     enable = true;
     settings = {
@@ -29,11 +27,11 @@
       language-server = {
         typescript-language-server = {
           command = "${pkgs.typescript-language-server}/bin/typescript-language-server";
-          args = [ "--stdio" ];
+          args = ["--stdio"];
         };
         nixd = {
           command = "${pkgs.nixd}/bin/nixd";
-          formatting.command = [ "alejandra" ];
+          formatting.command = ["alejandra"];
           # I use helix for random files, so we rely on system-wide nixpkgs rather than assuming there's a flake in pwd
           nixpkgs.expr = ''import (builtins.getFlake "/etc/nixos").inputs.nixpkgs { }'';
         };
@@ -49,7 +47,7 @@
           auto-format = true;
           formatter = {
             command = "${pkgs.biome}/bin/biome";
-            args = [ "format" "--stdin-file-path=file.ts" ];
+            args = ["format" "--stdin-file-path=file.ts"];
           };
         }
         {

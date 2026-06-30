@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     steam-devices-udev-rules
   ];
@@ -6,7 +6,7 @@
     enable = true;
     powerOnBoot = true;
   };
-  
+
   hardware.logitech.wireless = {
     enable = true;
     enableGraphical = true;
@@ -36,7 +36,7 @@
       PasswordAuthentication = false;
       KbdInteractiveAuthentication = false;
       PermitRootLogin = "no";
-      AllowUsers = [ "carter" ];
+      AllowUsers = ["carter"];
     };
   };
 
@@ -46,14 +46,14 @@
     enableGeoIP = true;
     settings = {
       AutomapHostsOnResolve = true;
-      AutomapHostsSuffixes = [ ".exit" ".onion" ];
+      AutomapHostsSuffixes = [".exit" ".onion"];
       DNSPort = 9053;
       ExcludeExitNodes = "{de},{fr}";
       ExcludeNodes = "{de},{fr}";
       Log = "notice syslog";
       SafeLogging = 1;
       Sandbox = true;
-      SocksPort = [ "9060" ];
+      SocksPort = ["9060"];
       StrictNodes = true;
     };
   };

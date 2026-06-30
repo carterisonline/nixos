@@ -1,12 +1,10 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   programs.vscode = {
     enable = true;
-    
+
     profiles.default = {
       enableUpdateCheck = false;
-      
+
       extensions = with pkgs.vscode-extensions; [
         ibm.output-colorizer
         jnoortheen.nix-ide
@@ -19,7 +17,7 @@
         ziglang.vscode-zig
         usernamehw.errorlens
       ];
-  
+
       keybindings = [
         {
           key = "alt+a";
@@ -43,58 +41,58 @@
           key = "ctrl+e a";
           command = "deleteAllLeft";
         }
-      {
-        key = "ctrl+e d";
-        command = "deleteAllRight";
-      }
-      {
-        key = "ctrl+e w";
-        command = "deleteInsideWord";
-      }
-    ];
+        {
+          key = "ctrl+e d";
+          command = "deleteAllRight";
+        }
+        {
+          key = "ctrl+e w";
+          command = "deleteInsideWord";
+        }
+      ];
 
-    userSettings = {
-      "chat.disableAIFeatures" = true;
-      "editor.fontFamily" = "JetBrains Mono NL";
-      "editor.formatOnSave" = true;
-      "editor.inlayHints.enabled" = "offUnlessPressed";
-      "editor.minimap.enabled" = false;
-      "jdk.telemetry.enabled" = false;
-      "[nix]"."editor.tabSize" = 2;
-      "nix.enableLanguageServer" = true;
-      "nix.serverPath" = "nixd";
-      "nix.serverSettings" = {
-        "nixd" = {
-          "nixpkgs" = {
+      userSettings = {
+        "chat.disableAIFeatures" = true;
+        "editor.fontFamily" = "JetBrains Mono NL";
+        "editor.formatOnSave" = true;
+        "editor.inlayHints.enabled" = "offUnlessPressed";
+        "editor.minimap.enabled" = false;
+        "jdk.telemetry.enabled" = false;
+        "[nix]"."editor.tabSize" = 2;
+        "nix.enableLanguageServer" = true;
+        "nix.serverPath" = "nixd";
+        "nix.serverSettings" = {
+          "nixd" = {
+            "nixpkgs" = {
               "expr" = "import (builtins.getFlake \"\${workspaceFolder}\").inputs.nixpkgs { }";
-          };
-          "formatting" = {
-            "command" = [
-              "alejandra"
-            ];
+            };
+            "formatting" = {
+              "command" = [
+                "alejandra"
+              ];
+            };
           };
         };
-      };
-      "remote.SSH.useLocalServer" = false;
-      "remote.SSH.remotePlatform" = {
-        "10.20.108.29" = "linux";
-      };
-      "rust-analyzer.completion.termSearch.enable" = true;
-      "rust-analyzer.imports.granularity.group" = "module";
-      "rust-analyzer.imports.prefix" = "crate";
-      "rust-analyzer.inlayHints.chainingHints.enable" = false;
-      "rust-analyzer.inlayHints.expressionAdjustmentHints.enable" = "always";
-      "rust-analyzer.inlayHints.expressionAdjustmentHints.hideOutsideUnsafe" = true;
-      "rust-analyzer.interpret.tests" = true;
-      "rust-analyzer.semanticHighlighting.operator.specialization.enable" = true;
-      "rust-analyzer.semanticHighlighting.punctuation.enable" = true;
-      "rust-analyzer.semanticHighlighting.punctuation.separate.macro.bang" = true;
-      "rust-analyzer.semanticHighlighting.punctuation.specialization.enable" = true;
-      "window.titleBarStyle" = "custom";
-      "workbench.colorTheme" = "Ayu Mirage Bordered";
-      "workbench.iconTheme" = "material-icon-theme";
-      "zig.path" = "zig";
-      "zig.zls.path" = "zls";
+        "remote.SSH.useLocalServer" = false;
+        "remote.SSH.remotePlatform" = {
+          "10.20.108.29" = "linux";
+        };
+        "rust-analyzer.completion.termSearch.enable" = true;
+        "rust-analyzer.imports.granularity.group" = "module";
+        "rust-analyzer.imports.prefix" = "crate";
+        "rust-analyzer.inlayHints.chainingHints.enable" = false;
+        "rust-analyzer.inlayHints.expressionAdjustmentHints.enable" = "always";
+        "rust-analyzer.inlayHints.expressionAdjustmentHints.hideOutsideUnsafe" = true;
+        "rust-analyzer.interpret.tests" = true;
+        "rust-analyzer.semanticHighlighting.operator.specialization.enable" = true;
+        "rust-analyzer.semanticHighlighting.punctuation.enable" = true;
+        "rust-analyzer.semanticHighlighting.punctuation.separate.macro.bang" = true;
+        "rust-analyzer.semanticHighlighting.punctuation.specialization.enable" = true;
+        "window.titleBarStyle" = "custom";
+        "workbench.colorTheme" = "Ayu Mirage Bordered";
+        "workbench.iconTheme" = "material-icon-theme";
+        "zig.path" = "zig";
+        "zig.zls.path" = "zls";
       };
     };
   };

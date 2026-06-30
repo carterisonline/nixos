@@ -1,7 +1,11 @@
-{ config, pkgs, nixpkgs-unstable, system, ... }:
-
 {
-  boot.kernelParams = [ "i915.force_probe=9a49" "i915.enable_guc=3" ];
+  config,
+  pkgs,
+  nixpkgs-unstable,
+  system,
+  ...
+}: {
+  boot.kernelParams = ["i915.force_probe=9a49" "i915.enable_guc=3"];
   environment.sessionVariables.VK_DRIVER_FILES = "/run/opengl-driver/share/vulkan/icd.d/nvidia_icd.json:/run/opengl-driver-32/share/vulkan/icd.d/nvidia_icd.json:/run/opengl-driver/share/vulkan/icd.d/intel_icd.x86_64.json:/run/opengl-driver-32/share/vulkan/icd.d/intel_icd.i686.json";
   fonts.fontconfig.useEmbeddedBitmaps = true;
   hardware.graphics = {
@@ -28,7 +32,7 @@
     };
   };
   hardware.nvidia-container-toolkit.enable = true;
-  services.xserver.videoDrivers = [ "nvidia" "modesetting" "fbdev" "i915" ];
+  services.xserver.videoDrivers = ["nvidia" "modesetting" "fbdev" "i915"];
   services.lsfg-vk = {
     enable = true;
     ui.enable = true;
@@ -50,7 +54,7 @@
       "-H 1080"
     ];
     env = {
-      DXVK_CONFIG="d3d11.cachedDynamicResources=a";
+      DXVK_CONFIG = "d3d11.cachedDynamicResources=a";
       __GLX_VENDOR_LIBRARY_NAME = "nvidia";
     };
   };

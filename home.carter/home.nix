@@ -1,6 +1,9 @@
-{ pkgs, lib, osConfig, ... }:
-
 {
+  pkgs,
+  lib,
+  osConfig,
+  ...
+}: {
   imports = [
     ./programs/fish.nix
     ./programs/gnome.nix
@@ -8,12 +11,14 @@
     ./programs/vscode.nix
   ];
 
-  stylix = ( import ../stylix.nix pkgs ) // {
-    targets = {
-      vscode.enable = false;
-      helix.enable = false;
+  stylix =
+    (import ../stylix.nix pkgs)
+    // {
+      targets = {
+        vscode.enable = false;
+        helix.enable = false;
+      };
     };
-  };
 
   xdg = {
     autostart = {
@@ -26,18 +31,18 @@
       enable = true;
       settings = {
         default = [
-          "kitty.desktop"  
+          "kitty.desktop"
         ];
       };
     };
   };
-  
+
   home = {
     file."/home/carter/.gtkrc-2.0".force = lib.mkForce true;
 
     sessionVariables.NIXPKGS_ALLOW_UNFREE = 1;
-  
-    packages = with pkgs; [ 
+
+    packages = with pkgs; [
       android-tools
       appimage-run
       btop-cuda
@@ -62,8 +67,8 @@
       xarchiver
       yabridge
       yabridgectl
-   ];
-  
+    ];
+
     username = "carter";
     homeDirectory = "/home/carter";
     stateVersion = "24.05";
@@ -87,17 +92,17 @@
     enableGitIntegration = true;
     shellIntegration.enableFishIntegration = true;
     extraConfig = ''
-    repaint_delay 4
-    input_delay 1
-    sync_to_monitor no
-    confirm_os_window_close 0
+      repaint_delay 4
+      input_delay 1
+      sync_to_monitor no
+      confirm_os_window_close 0
     '';
   };
 
   programs.lutris = {
     enable = true;
     defaultWinePackage = pkgs.proton-ge-bin;
-    protonPackages = [ pkgs.proton-ge-bin ];
+    protonPackages = [pkgs.proton-ge-bin];
     runners.linux.settings.system = {
       disable_runtime = true;
       prefix_command = "${pkgs.steam-run}/bin/steam-run";
@@ -157,7 +162,7 @@
       "\\C-\\M-\\d" = "kill-line";
     };
   };
-  
+
   programs.tealdeer = {
     enable = true;
     settings.updates.auto_update = true;

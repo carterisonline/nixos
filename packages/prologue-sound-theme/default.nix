@@ -1,5 +1,7 @@
-{ stdenv, lib }:
-
+{
+  stdenv,
+  lib,
+}:
 stdenv.mkDerivation {
   pname = "prologue-sound-theme";
   version = "1.0.0";
@@ -15,7 +17,7 @@ stdenv.mkDerivation {
   meta = with lib; {
     description = "Prologue XDG sound theme";
     license = licenses.mit;
-    maintainers = [ maintainers.carterisonline ];
+    maintainers = [maintainers.carterisonline];
     platforms = platforms.linux;
   };
 }

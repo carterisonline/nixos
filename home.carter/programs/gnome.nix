@@ -1,6 +1,4 @@
-{pkgs, ...}:
-
-let
+{pkgs, ...}: let
   gnomeExtensions = with pkgs.gnomeExtensions; [
     advanced-alttab-window-switcher
     appindicator
@@ -15,8 +13,7 @@ let
     tray-icons-reloaded
     vitals
   ];
-in
-{
+in {
   home.packages = gnomeExtensions;
 
   dconf = {
@@ -52,11 +49,11 @@ in
       };
 
       "org/gnome/desktop/wm/keybindings" = {
-        close = [ "<Super><Shift>c" ];
-        maximize = [ "<Super><Shift>w" ];
-        minimize = [ "<Super><Shift>s" ];
-        move-to-side-e = [ "<Super><Shift>d" ];
-        move-to-side-w = [ "<Super><Shift>a" ];
+        close = ["<Super><Shift>c"];
+        maximize = ["<Super><Shift>w"];
+        minimize = ["<Super><Shift>s"];
+        move-to-side-e = ["<Super><Shift>d"];
+        move-to-side-w = ["<Super><Shift>a"];
       };
 
       "org/gnome/desktop/wm/preferences" = {
@@ -75,9 +72,9 @@ in
       };
 
       "org/gnome/settings-daemon/plugins/media-keys" = {
-        next = [ "<Ctrl><Alt>Page_Down" ];
-        play = [ "<Alt>End" ];
-        previous = [ "<Ctrl><Alt>Page_Up" ];
+        next = ["<Ctrl><Alt>Page_Down"];
+        play = ["<Alt>End"];
+        previous = ["<Ctrl><Alt>Page_Up"];
       };
 
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
@@ -90,7 +87,7 @@ in
         binding = "<Ctrl><Alt>Escape";
         command = "missioncenter";
         name = "Launch mission center";
-      };      
+      };
 
       "org/gnome/shell" = {
         disable-user-extensions = false;
@@ -135,7 +132,7 @@ in
         hover-color = "#4d3681";
         selection-color = "#b493ff";
         selection-opacity = 70;
-        toggle-launcher = [ "<Super>" ];
+        toggle-launcher = ["<Super>"];
       };
 
       "org/gnome/shell/extensions/paperwm" = {
@@ -162,28 +159,28 @@ in
       };
 
       "org/gnome/shell/extensions/paperwm/keybindings" = {
-        move-up-workspace = [ "<Shift><Super>w" ];
-        move-down-workspace = [ "<Shift><Super>s" ];
-        move-left = [ "<Shift><Super>a" ];
-        move-right = [ "<Shift><Super>d" ];
-        move-monitor-above = [ "<Shift><Control><Super>w" ];
-        move-monitor-below = [ "<Shift><Control><Super>s" ];
-        move-monitor-left = [ "<Shift><Control><Super>a" ];
-        move-monitor-right = [ "<Shift><Control><Super>d" ];
-        switch-up-workspace = [ "<Super>w" ];
-        switch-down-workspace = [ "<Super>s" ];
-        switch-next = [ "<Super>d" ];
-        switch-previous = [ "<Super>a" ];
-        switch-monitor-above = [ "<Control><Super>w" ];
-        switch-monitor-below = [ "<Control><Super>s" ];
-        switch-monitor-left = [ "<Control><Super>a" ];
-        switch-monitor-right = [ "<Control><Super>d" ];       
-        switch-global-up = [ "" ];
-        switch-global-down = [ "" ];
-        switch-global-left = [ "" ];
-        switch-global-right = [ "" ];
-        switch-focus-mode = [ "" ];
-        switch-open-window-position = [ "" ];
+        move-up-workspace = ["<Shift><Super>w"];
+        move-down-workspace = ["<Shift><Super>s"];
+        move-left = ["<Shift><Super>a"];
+        move-right = ["<Shift><Super>d"];
+        move-monitor-above = ["<Shift><Control><Super>w"];
+        move-monitor-below = ["<Shift><Control><Super>s"];
+        move-monitor-left = ["<Shift><Control><Super>a"];
+        move-monitor-right = ["<Shift><Control><Super>d"];
+        switch-up-workspace = ["<Super>w"];
+        switch-down-workspace = ["<Super>s"];
+        switch-next = ["<Super>d"];
+        switch-previous = ["<Super>a"];
+        switch-monitor-above = ["<Control><Super>w"];
+        switch-monitor-below = ["<Control><Super>s"];
+        switch-monitor-left = ["<Control><Super>a"];
+        switch-monitor-right = ["<Control><Super>d"];
+        switch-global-up = [""];
+        switch-global-down = [""];
+        switch-global-left = [""];
+        switch-global-right = [""];
+        switch-focus-mode = [""];
+        switch-open-window-position = [""];
       };
 
       "org/gnome/shell/extensions/vitals" = {
@@ -205,7 +202,7 @@ in
         gtk-application-prefer-dark-theme=1
       '';
     };
-    
+
     gtk4.extraConfig = {
       Settings = ''
         gtk-application-prefer-dark-theme=1

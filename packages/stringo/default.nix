@@ -1,4 +1,13 @@
-{ curlFull, fontconfig, freetype, libgcc, stdenv, fetchurl, lib, ouch }:
+{
+  curlFull,
+  fontconfig,
+  freetype,
+  libgcc,
+  stdenv,
+  fetchurl,
+  lib,
+  ouch,
+}:
 stdenv.mkDerivation rec {
   pname = "stringo";
   version = "0.2";

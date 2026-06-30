@@ -1,38 +1,46 @@
-{ config, pkgs, ... }:
-
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-      ./subconf/audio.nix
-      ./subconf/boot.nix
-      ./subconf/connectivity.nix
-      ./subconf/environment.nix
-      ./subconf/gnome.nix
-      ./subconf/graphics.nix
-      ./subconf/plymouth.nix
-      ./subconf/runtime.nix
-      ./subconf/security.nix
-      ./subconf/virtualization.nix
-    ];
+  config,
+  pkgs,
+  ...
+}: {
+  imports = [
+    ./hardware-configuration.nix
+    ./subconf/audio.nix
+    ./subconf/boot.nix
+    ./subconf/connectivity.nix
+    ./subconf/environment.nix
+    ./subconf/gnome.nix
+    ./subconf/graphics.nix
+    ./subconf/plymouth.nix
+    ./subconf/runtime.nix
+    ./subconf/security.nix
+    ./subconf/virtualization.nix
+  ];
 
   time.timeZone = "America/New_York";
 
   # System Packages should be the minimal set of programs which helps users
   # manage their system, diagnose issues, and get most things done.
-  environment.systemPackages = with pkgs; [    
+  environment.systemPackages = with pkgs; [
     # Core
-    git wget ripgrep fd fzf sd parallel-disk-usage
+    git
+    wget
+    ripgrep
+    fd
+    fzf
+    sd
+    parallel-disk-usage
 
     # Documentation
-    man-pages man-pages-posix
+    man-pages
+    man-pages-posix
 
     # Document Management
     collabora-desktop
     helix
     nixd
     alejandra
-    
+
     # Monitoring
     ## GPU
     clinfo
@@ -63,7 +71,7 @@
     # Terminal
     kitty
   ];
-        
+
   # Make Fish the shell, but only in interactive contexts.
   programs.bash = {
     interactiveShellInit = ''
@@ -72,7 +80,7 @@
         shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=""
         exec ${pkgs.fish}/bin/fish $LOGIN_OPTION
       fi
-    '';#''
+    ''; #''
   };
 
   programs.firefox = {
@@ -90,7 +98,7 @@
     presence = {
       enable = true;
       steamApiKeyFile = config.age.secrets.steam-api-key.path;
-      userIds = [ "76561198202701980" ];
+      userIds = ["76561198202701980"];
     };
   };
 
@@ -98,4 +106,3 @@
 
   stylix = import ./stylix.nix pkgs;
 }
-

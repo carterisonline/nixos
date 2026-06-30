@@ -15,30 +15,45 @@
     agenix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nixpkgs, nixpkgs-unstable, stylix, home-manager, nix-alien, lsfg-vk-flake, steam-presence, agenix, ... }@attrs:
-  let
+  outputs = {
+    nixpkgs,
+    nixpkgs-unstable,
+    stylix,
+    home-manager,
+    nix-alien,
+    lsfg-vk-flake,
+    steam-presence,
+    agenix,
+    ...
+  } @ attrs: let
     system = "x86_64-linux";
-    pkgUse = x: { environment.systemPackages = x; };
-    pkgImport = path: opts: { pkgs, ... }: pkgUse [ (pkgs.callPackage path opts) ];
-    pkgFromFlake = x: if (builtins.isList x)
+    pkgUse = x: {environment.systemPackages = x;};
+    pkgImport = path: opts: {pkgs, ...}: pkgUse [(pkgs.callPackage path opts)];
+    pkgFromFlake = x:
+      if (builtins.isList x)
       then (y: pkgUse (map (z: y.packages.${system}.${z}) x))
-      else pkgUse [ x.packages.${system}.default ];
-    pkgOverlay = x: repo: { pkgs, ... }: ( (pkgUse (map (y: pkgs.${y}) x)) // {
-      nixpkgs.overlays = [
-        (final: prev: builtins.listToAttrs (map (y: { name = y; value = repo.legacyPackages.${system}.${y};}) x))
-      ];
-    });
-  in
-   {
+      else pkgUse [x.packages.${system}.default];
+    pkgOverlay = x: repo: {pkgs, ...}: ((pkgUse (map (y: pkgs.${y}) x))
+      // {
+        nixpkgs.overlays = [
+          (final: prev:
+            builtins.listToAttrs (map (y: {
+                name = y;
+                value = repo.legacyPackages.${system}.${y};
+              })
+              x))
+        ];
+      });
+  in {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       inherit system;
-      specialArgs = attrs // { inherit system; };
-      
+      specialArgs = attrs // {inherit system;};
+
       modules = [
-        (pkgOverlay [ "fish" ] nixpkgs-unstable)
+        (pkgOverlay ["fish"] nixpkgs-unstable)
         ./settings.nix
         ./configuration.nix
-        
+
         (pkgImport ./packages/prologue-sound-theme/default.nix {})
         (pkgImport ./packages/diagnose/default.nix {})
         (pkgImport ./packages/bitwig-studio/default.nix {})
@@ -49,12 +64,13 @@
         (pkgFromFlake nix-alien)
         (pkgFromFlake agenix)
 
-        lsfg-vk-flake.nixosModules.default                
+        lsfg-vk-flake.nixosModules.default
 
         agenix.nixosModules.default
         steam-presence.nixosModules.steam-presence
         stylix.nixosModules.stylix
-        home-manager.nixosModules.home-manager {
+        home-manager.nixosModules.home-manager
+        {
           home-manager = {
             backupFileExtension = "hm-backup";
             useGlobalPkgs = true;
