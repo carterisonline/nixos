@@ -44,7 +44,7 @@ in
         after = ["sound.target"];
         wantedBy = ["default.target"];
         timerConfig = {
-          OnBootSec = "10";
+          OnBootSec = "120";
           OnUnitActiveSec = "10";
           AccuracySec = "1s";
           Unit = "mic-switcher-notif.service";
